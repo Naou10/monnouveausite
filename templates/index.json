@@ -29,7 +29,14 @@
     "logo_list_KN8xhb": {
       "type": "logo-list",
       "blocks": {
-        "logo_MxtRbW": {
+        "logo_TYhkrU": {
+          "type": "logo",
+          "settings": {
+            "logo_width": 120,
+            "link": ""
+          }
+        },
+        "logo_6Qwk3n": {
           "type": "logo",
           "settings": {
             "logo_width": 120,
@@ -52,7 +59,8 @@
         }
       },
       "block_order": [
-        "logo_MxtRbW",
+        "logo_TYhkrU",
+        "logo_6Qwk3n",
         "logo_x9n3Md",
         "logo_JhiHDJ"
       ],
@@ -63,7 +71,7 @@
         "title": "Vu sur",
         "content": "",
         "text_alignment": "center",
-        "items_per_row": 5,
+        "items_per_row": 4,
         "background": "",
         "background_gradient": "",
         "text_color": "",
