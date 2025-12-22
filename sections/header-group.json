@@ -21,6 +21,13 @@
             "url": ""
           }
         },
+        "message_K3TVwt": {
+          "type": "message",
+          "settings": {
+            "text": "Offre limitée Hiver: -50 %",
+            "url": ""
+          }
+        },
         "message_Ld4Qkc": {
           "type": "message",
           "settings": {
@@ -35,19 +42,20 @@
             "url": ""
           }
         },
-        "message_K3TVwt": {
+        "message_GGVdqj": {
           "type": "message",
           "settings": {
-            "text": "Offre limitée Hiver: -50 %",
+            "text": "Paiement 100% sécurisé",
             "url": ""
           }
         }
       },
       "block_order": [
         "message",
+        "message_K3TVwt",
         "message_Ld4Qkc",
         "message_YUJMVi",
-        "message_K3TVwt"
+        "message_GGVdqj"
       ],
       "settings": {
         "enable_sticky": false,
