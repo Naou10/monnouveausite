@@ -28,24 +28,10 @@
             "url": ""
           }
         },
-        "message_K3TVwt": {
-          "type": "message",
-          "settings": {
-            "text": "Offre limitée Hiver: -50 %",
-            "url": ""
-          }
-        },
         "message_Ld4Qkc": {
           "type": "message",
           "settings": {
             "text": "Livraison gratuite à domicile",
-            "url": ""
-          }
-        },
-        "message_YUJMVi": {
-          "type": "message",
-          "settings": {
-            "text": "Satisfait ou remboursé",
             "url": ""
           }
         }
@@ -53,9 +39,7 @@
       "block_order": [
         "message",
         "message_GGVdqj",
-        "message_K3TVwt",
-        "message_Ld4Qkc",
-        "message_YUJMVi"
+        "message_Ld4Qkc"
       ],
       "settings": {
         "enable_sticky": false,
