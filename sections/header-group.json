@@ -17,13 +17,37 @@
         "message": {
           "type": "message",
           "settings": {
-            "text": "Announce something here",
+            "text": "Offre limitée Hiver: -50 %",
+            "url": ""
+          }
+        },
+        "message_Ld4Qkc": {
+          "type": "message",
+          "settings": {
+            "text": "Livraison gratuite à domicile",
+            "url": ""
+          }
+        },
+        "message_YUJMVi": {
+          "type": "message",
+          "settings": {
+            "text": "Offre limitée Hiver: -50 %",
+            "url": ""
+          }
+        },
+        "message_K3TVwt": {
+          "type": "message",
+          "settings": {
+            "text": "Offre limitée Hiver: -50 %",
             "url": ""
           }
         }
       },
       "block_order": [
-        "message"
+        "message",
+        "message_Ld4Qkc",
+        "message_YUJMVi",
+        "message_K3TVwt"
       ],
       "settings": {
         "enable_sticky": false,
@@ -44,7 +68,7 @@
         "hide_on_scroll": false,
         "logo": "shopify://shop_images/OIUUYTR.png",
         "logo_max_width": 130,
-        "logo_mobile_max_width": 110,
+        "logo_mobile_max_width": 100,
         "menu": "main-menu",
         "sidebar_menu": "main-menu",
         "secondary_menu": "",
