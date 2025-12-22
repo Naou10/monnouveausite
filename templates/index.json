@@ -84,10 +84,85 @@
         "logo_item_background": "#ffffff",
         "logo_item_border": ""
       }
+    },
+    "rich_text_wJf4k9": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_dAnMXm": {
+          "type": "heading",
+          "settings": {
+            "text": "Les 6 essentiels de la poudre violette d’UBE:",
+            "heading_tag": "h2",
+            "text_color": "",
+            "gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_dAnMXm"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "image_with_text_overlay_7eA9LR": {
+      "type": "image-with-text-overlay",
+      "name": "Image with text overlay",
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "enable_parallax": false,
+        "image_size": "auto",
+        "image": "shopify://shop_images/6_Bienfaits_sante_ILAGE_DEFINITIVE.png",
+        "mobile_image": "shopify://shop_images/6_Bienfaits_sante_ILAGE_DEFINITIVE.png",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "text_color": "#ffffff",
+        "overlay_color": "#ffffff",
+        "overlay_opacity": 0
+      }
+    },
+    "rich_text_FbCrq7": {
+      "type": "rich-text",
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "image_with_text_overlay_tLpjCV": {
+      "type": "image-with-text-overlay",
+      "name": "Image with text overlay",
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "enable_parallax": false,
+        "image_size": "auto",
+        "image": "shopify://shop_images/POUDLARDDDDDD.jpg",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
     }
   },
   "order": [
     "image_with_text_overlay_TPN3Fp",
-    "logo_list_KN8xhb"
+    "logo_list_KN8xhb",
+    "rich_text_wJf4k9",
+    "image_with_text_overlay_7eA9LR",
+    "rich_text_FbCrq7",
+    "image_with_text_overlay_tLpjCV"
   ]
 }
