@@ -229,6 +229,45 @@
             "link_style": "link"
           }
         },
+        "item_KEMKJE": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Design_sans_titre_3.png",
+            "column_size": "3",
+            "title": "Léa P.",
+            "heading_tag": "h4",
+            "content": "<p>Une poudre aussi belle que bonne. J’aime ses atouts naturels et la sensation d’équilibre qu’elle apporte au quotidien. Je recommande à 100 %. </p><p>⭐⭐⭐⭐</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "item_xzfbKr": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Design_sans_titre_4.png",
+            "column_size": "3",
+            "title": "Ana E.",
+            "heading_tag": "h4",
+            "content": "<p>Enfin une alternative au café qui tient ses promesses. Je me sens en forme du matin au soir, sans pic d’énergie ni crash. C’est devenu mon rituel.</p><p>⭐⭐⭐⭐⭐</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "item_MUtPEe": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/IMAGE_AVIS_5.jpg",
+            "column_size": "3",
+            "title": "Ana E.",
+            "heading_tag": "h4",
+            "content": "<p>Enfin une alternative au café qui tient ses promesses. Je me sens en forme du matin au soir, sans pic d’énergie ni crash. C’est devenu mon rituel.</p><p>⭐⭐⭐⭐⭐</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
         "item_nPBJpJ": {
           "type": "item",
           "settings": {
@@ -246,6 +285,9 @@
       "block_order": [
         "item_ryphV7",
         "item_MeQJrB",
+        "item_KEMKJE",
+        "item_xzfbKr",
+        "item_MUtPEe",
         "item_nPBJpJ"
       ],
       "name": "Multi-column",
