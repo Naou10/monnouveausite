@@ -163,8 +163,8 @@
         "heading_ffJVAa": {
           "type": "heading",
           "settings": {
-            "text": "Nos clients en parlent le mieux:",
-            "heading_tag": "h1",
+            "text": "Avant/Aprés UBELA",
+            "heading_tag": "h2",
             "text_color": "",
             "gradient": ""
           }
@@ -176,7 +176,7 @@
       "name": "Rich text",
       "settings": {
         "full_width": true,
-        "content_width": "small",
+        "content_width": "large",
         "text_position": "center",
         "background": "",
         "background_gradient": "",
