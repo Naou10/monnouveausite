@@ -156,29 +156,6 @@
         "overlay_color": "#000000",
         "overlay_opacity": 0
       }
-    },
-    "rich_text_GnR3U7": {
-      "type": "rich-text",
-      "blocks": {
-        "richtext_HNhrKQ": {
-          "type": "richtext",
-          "settings": {
-            "content": "<h5>En adoptant UBELA, Découvrez l’UBE et profitez d’une énergie durable, pour affronter chaque journée sans le moindre coup de mou.</h5>"
-          }
-        }
-      },
-      "block_order": [
-        "richtext_HNhrKQ"
-      ],
-      "name": "Rich text",
-      "settings": {
-        "full_width": true,
-        "content_width": "small",
-        "text_position": "center",
-        "background": "",
-        "background_gradient": "",
-        "text_color": ""
-      }
     }
   },
   "order": [
@@ -187,7 +164,6 @@
     "rich_text_wJf4k9",
     "image_with_text_overlay_7eA9LR",
     "rich_text_FbCrq7",
-    "image_with_text_overlay_tLpjCV",
-    "rich_text_GnR3U7"
+    "image_with_text_overlay_tLpjCV"
   ]
 }
