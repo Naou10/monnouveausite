@@ -199,6 +199,68 @@
         "overlay_color": "#000000",
         "overlay_opacity": 0
       }
+    },
+    "multi_column_9LJNdm": {
+      "type": "multi-column",
+      "blocks": {
+        "item_ryphV7": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/IMAGE_AVIS_5.jpg",
+            "column_size": "3",
+            "title": "Ana E.",
+            "heading_tag": "h4",
+            "content": "<p>Enfin une alternative au café qui tient ses promesses. Je me sens en forme du matin au soir, sans pic d’énergie ni crash. C’est devenu mon rituel.</p><p>⭐⭐⭐⭐⭐</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "item_MeQJrB": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Image_avis_6.jpg",
+            "column_size": "3",
+            "title": "Sarah M.",
+            "heading_tag": "h4",
+            "content": "<p>Le goût est incroyable : naturellement sucré, avec des notes de vanille et une légère touche de noisette. Aucun besoin de sucre ajouté, c’est parfait.</p><p>⭐⭐⭐⭐⭐</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "item_nPBJpJ": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Image_avis_3.jpg",
+            "column_size": "3",
+            "title": "Léa P.",
+            "heading_tag": "h4",
+            "content": "<p>Une poudre aussi belle que bonne. J’aime ses atouts naturels et la sensation d’équilibre qu’elle apporte au quotidien. Je recommande à 100 %. </p><p>⭐⭐⭐⭐</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        }
+      },
+      "block_order": [
+        "item_ryphV7",
+        "item_MeQJrB",
+        "item_nPBJpJ"
+      ],
+      "name": "Multi-column",
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": false,
+        "gap": "medium",
+        "text_alignment": "center",
+        "subheading": "",
+        "title": "Nos clients en parlent le mieux",
+        "content": "<p>Organize content into multiple columns to share useful information to your customers about your products, values...</p>",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
     }
   },
   "order": [
@@ -209,6 +271,7 @@
     "rich_text_FbCrq7",
     "image_with_text_overlay_tLpjCV",
     "rich_text_mXcDAg",
-    "image_with_text_overlay_wG46E6"
+    "image_with_text_overlay_wG46E6",
+    "multi_column_9LJNdm"
   ]
 }
