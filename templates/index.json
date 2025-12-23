@@ -156,6 +156,49 @@
         "overlay_color": "#000000",
         "overlay_opacity": 0
       }
+    },
+    "rich_text_mXcDAg": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_ffJVAa": {
+          "type": "heading",
+          "settings": {
+            "text": "Nos clients en parlent le mieux:",
+            "heading_tag": "h1",
+            "text_color": "",
+            "gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_ffJVAa"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "image_with_text_overlay_bWhXaf": {
+      "type": "image-with-text-overlay",
+      "name": "Image with text overlay",
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "enable_parallax": false,
+        "image_size": "auto",
+        "image": "shopify://shop_images/TERTIAIRE.jpg",
+        "mobile_image": "shopify://shop_images/TERTIAIRE.jpg",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 9
+      }
     }
   },
   "order": [
@@ -164,6 +207,8 @@
     "rich_text_wJf4k9",
     "image_with_text_overlay_7eA9LR",
     "rich_text_FbCrq7",
-    "image_with_text_overlay_tLpjCV"
+    "image_with_text_overlay_tLpjCV",
+    "rich_text_mXcDAg",
+    "image_with_text_overlay_bWhXaf"
   ]
 }
