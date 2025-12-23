@@ -163,7 +163,7 @@
         "heading_ffJVAa": {
           "type": "heading",
           "settings": {
-            "text": "Avant/Aprés UBELA",
+            "text": "Avant/Aprés UBELA:",
             "heading_tag": "h2",
             "text_color": "",
             "gradient": ""
@@ -183,7 +183,7 @@
         "text_color": ""
       }
     },
-    "image_with_text_overlay_bWhXaf": {
+    "image_with_text_overlay_wG46E6": {
       "type": "image-with-text-overlay",
       "name": "Image with text overlay",
       "settings": {
@@ -191,13 +191,13 @@
         "allow_transparent_header": false,
         "enable_parallax": false,
         "image_size": "auto",
-        "image": "shopify://shop_images/TERTIAIRE.jpg",
-        "mobile_image": "shopify://shop_images/TERTIAIRE.jpg",
+        "image": "shopify://shop_images/LOULOUUUUUU.jpg",
+        "mobile_image": "shopify://shop_images/LOULOUUUUUU.jpg",
         "mobile_text_position": "place-self-center text-center",
         "desktop_text_position": "sm:place-self-center sm:text-center",
         "text_color": "#ffffff",
         "overlay_color": "#000000",
-        "overlay_opacity": 9
+        "overlay_opacity": 0
       }
     }
   },
@@ -209,6 +209,6 @@
     "rich_text_FbCrq7",
     "image_with_text_overlay_tLpjCV",
     "rich_text_mXcDAg",
-    "image_with_text_overlay_bWhXaf"
+    "image_with_text_overlay_wG46E6"
   ]
 }
