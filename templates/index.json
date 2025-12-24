@@ -119,8 +119,8 @@
         "allow_transparent_header": false,
         "enable_parallax": false,
         "image_size": "auto",
-        "image": "shopify://shop_images/6_Bienfaits_sante_ILAGE_DEFINITIVE.png",
-        "mobile_image": "shopify://shop_images/6_Bienfaits_sante_ILAGE_DEFINITIVE.png",
+        "image": "shopify://shop_images/6_Bienfaits_sante.png",
+        "mobile_image": "shopify://shop_images/6_Bienfaits_sante.png",
         "mobile_text_position": "place-self-center text-center",
         "desktop_text_position": "sm:place-self-center sm:text-center",
         "text_color": "#ffffff",
@@ -247,7 +247,7 @@
           "settings": {
             "image": "shopify://shop_images/Design_sans_titre_4.png",
             "column_size": "3",
-            "title": "Ana E.",
+            "title": "Julien R.",
             "heading_tag": "h4",
             "content": "<p>Enfin une alternative au café qui tient ses promesses. Je me sens en forme du matin au soir, sans pic d’énergie ni crash. C’est devenu mon rituel.</p><p>⭐⭐⭐⭐⭐</p>",
             "link_url": "",
@@ -258,11 +258,11 @@
         "item_MUtPEe": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/IMAGE_AVIS_5.jpg",
+            "image": "shopify://shop_images/Image_avis_4.jpg",
             "column_size": "3",
-            "title": "Ana E.",
+            "title": "Nina K.",
             "heading_tag": "h4",
-            "content": "<p>Enfin une alternative au café qui tient ses promesses. Je me sens en forme du matin au soir, sans pic d’énergie ni crash. C’est devenu mon rituel.</p><p>⭐⭐⭐⭐⭐</p>",
+            "content": "<p>J’ai testé le café, le matcha… et l’UBE les surpasse largement. Plus agréable au goût, plus doux, et sans les effets que je n’aimais pas avant.</p><p>⭐⭐⭐⭐⭐</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -271,11 +271,11 @@
         "item_nPBJpJ": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/Image_avis_3.jpg",
+            "image": "shopify://shop_images/IMAGE_avis_2.jpg",
             "column_size": "3",
-            "title": "Léa P.",
+            "title": "Camille D.",
             "heading_tag": "h4",
-            "content": "<p>Une poudre aussi belle que bonne. J’aime ses atouts naturels et la sensation d’équilibre qu’elle apporte au quotidien. Je recommande à 100 %. </p><p>⭐⭐⭐⭐</p>",
+            "content": "<p>Chaud ou froid, l’UBE est délicieux. Bien plus doux et gourmand que le matcha que je trouvais trop amer. Une vraie découverte. </p><p>⭐⭐⭐⭐⭐</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -297,8 +297,8 @@
         "gap": "medium",
         "text_alignment": "center",
         "subheading": "",
-        "title": "Nos clients en parlent le mieux",
-        "content": "<p>Organize content into multiple columns to share useful information to your customers about your products, values...</p>",
+        "title": "Nos clients en parlent le mieux:",
+        "content": "",
         "background": "",
         "background_gradient": "",
         "text_color": ""
