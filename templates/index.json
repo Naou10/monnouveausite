@@ -329,6 +329,12 @@
     "featured_product_UAfRCT": {
       "type": "featured-product",
       "blocks": {
+        "liquid_kXm7Te": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "{%- liquid\n  comment\n    ✅ À MODIFIER ICI :\n    - rating : note sur 5 (ex 4.8)\n    - review_count : nombre d'avis (ex 483)\n  endcomment\n\n  assign rating = 4.8\n  assign review_count = 483\n\n  assign star_size = 18\n  assign tp_green = '#00B67A'\n  assign tp_grey  = '#D9D9D9'\n-%}\n\n<div class=\"jp-trustpilot-rating\" role=\"img\" aria-label=\"Note {{ rating }} sur 5, {{ review_count }} avis\">\n  <div class=\"jp-stars\" aria-hidden=\"true\">\n    {%- for i in (1..5) -%}\n      {%- assign base = i | minus: 1 -%}\n      {%- assign delta = rating | minus: base -%}\n\n      {%- if delta >= 1 -%}\n        {%- assign fill = tp_green -%}\n        {%- assign use_gradient = false -%}\n      {%- elsif delta <= 0 -%}\n        {%- assign fill = tp_grey -%}\n        {%- assign use_gradient = false -%}\n      {%- else -%}\n        {%- assign percent = delta | times: 100 | round -%}\n        {%- assign use_gradient = true -%}\n      {%- endif -%}\n\n      <svg class=\"jp-star\" width=\"{{ star_size }}\" height=\"{{ star_size }}\" viewBox=\"0 0 24 24\" focusable=\"false\" aria-hidden=\"true\">\n        {%- if use_gradient -%}\n          <defs>\n            <linearGradient id=\"jp-grad-{{ i }}\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"0%\">\n              <stop offset=\"{{ percent }}%\" stop-color=\"{{ tp_green }}\"></stop>\n              <stop offset=\"{{ percent }}%\" stop-color=\"{{ tp_grey }}\"></stop>\n            </linearGradient>\n          </defs>\n          <path fill=\"url(#jp-grad-{{ i }})\" d=\"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\"/>\n        {%- else -%}\n          <path fill=\"{{ fill }}\" d=\"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\"/>\n        {%- endif -%}\n      </svg>\n    {%- endfor -%}\n  </div>\n\n  <span class=\"jp-count\">({{ review_count }} avis)</span>\n</div>\n\n<style>\n  .jp-trustpilot-rating{\n    display:inline-flex;\n    align-items:center;\n    gap:8px;\n    line-height:1;\n  }\n  .jp-stars{\n    display:inline-flex;\n    align-items:center;\n    gap:3px;\n  }\n  .jp-star{\n    display:block;\n  }\n  .jp-count{\n    font-size: 14px;\n    opacity: .85;\n    white-space: nowrap;\n  }\n</style>"
+          }
+        },
         "vendor_8RyVf9": {
           "type": "vendor",
           "settings": {}
@@ -399,6 +405,7 @@
         }
       },
       "block_order": [
+        "liquid_kXm7Te",
         "vendor_8RyVf9",
         "title_G8HWTi",
         "badges_Yf9Gfi",
