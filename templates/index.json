@@ -159,20 +159,6 @@
     },
     "rich_text_mXcDAg": {
       "type": "rich-text",
-      "blocks": {
-        "heading_ffJVAa": {
-          "type": "heading",
-          "settings": {
-            "text": "Avant/Aprés UBELA:",
-            "heading_tag": "h2",
-            "text_color": "",
-            "gradient": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_ffJVAa"
-      ],
       "name": "Rich text",
       "settings": {
         "full_width": true,
@@ -181,23 +167,6 @@
         "background": "",
         "background_gradient": "",
         "text_color": ""
-      }
-    },
-    "image_with_text_overlay_wG46E6": {
-      "type": "image-with-text-overlay",
-      "name": "Image with text overlay",
-      "settings": {
-        "full_width": true,
-        "allow_transparent_header": false,
-        "enable_parallax": false,
-        "image_size": "auto",
-        "image": "shopify://shop_images/LOULOUUUUUU.jpg",
-        "mobile_image": "shopify://shop_images/LOULOUUUUUU.jpg",
-        "mobile_text_position": "place-self-center text-center",
-        "desktop_text_position": "sm:place-self-center sm:text-center",
-        "text_color": "#ffffff",
-        "overlay_color": "#000000",
-        "overlay_opacity": 0
       }
     },
     "multi_column_9LJNdm": {
@@ -302,6 +271,59 @@
         "background": "",
         "background_gradient": "",
         "text_color": ""
+      }
+    },
+    "rich_text_tfzmWg": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_VDFxwM": {
+          "type": "heading",
+          "settings": {
+            "text": "Avant j'enchainais les cafés, et aprés j'ai découvert l'UBE",
+            "heading_tag": "h3",
+            "text_color": "#1a1a1a",
+            "gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_VDFxwM"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
+    "before_after_image_Xpt67W": {
+      "type": "before-after-image",
+      "name": "Before/after image",
+      "settings": {
+        "full_width": true,
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "before_image": "shopify://shop_images/0e65e1c3-8866-4541-98c8-3296ac4147ba.jpg",
+        "before_image_mobile": "shopify://shop_images/0e65e1c3-8866-4541-98c8-3296ac4147ba.jpg",
+        "after_image": "shopify://shop_images/28621bc0-94b4-409b-ac9f-75a4e2c64446.jpg",
+        "after_image_mobile": "shopify://shop_images/28621bc0-94b4-409b-ac9f-75a4e2c64446.jpg",
+        "expand_image": false,
+        "text_position": "start",
+        "before_after_text_position": "top",
+        "before_text": "",
+        "after_text": "",
+        "drag_initial_position": 50,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "before_text_color": "#ffffff",
+        "after_text_color": "#ffffff",
+        "drag_cursor_background": "#ffffff",
+        "drag_cursor_color": "#000000"
       }
     },
     "featured_product_UAfRCT": {
@@ -417,8 +439,9 @@
     "rich_text_FbCrq7",
     "image_with_text_overlay_tLpjCV",
     "rich_text_mXcDAg",
-    "image_with_text_overlay_wG46E6",
     "multi_column_9LJNdm",
+    "rich_text_tfzmWg",
+    "before_after_image_Xpt67W",
     "featured_product_UAfRCT"
   ]
 }
