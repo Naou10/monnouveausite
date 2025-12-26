@@ -88,12 +88,6 @@
     "featured_product_UAfRCT": {
       "type": "featured-product",
       "blocks": {
-        "liquid_hJpCLe": {
-          "type": "liquid",
-          "settings": {
-            "liquid": "<div class=\"jp-stock-wrap\" role=\"status\" aria-live=\"polite\">\n  <span class=\"jp-dot\" aria-hidden=\"true\"></span>\n  <span class=\"jp-stock-text\">Stock limitée: <strong>6</strong> restants</span>\n</div>\n\n<style>\n  .jp-stock-wrap{\n    display: inline-flex;\n    align-items: center;\n    gap: 8px;\n    color: #d10000;\n    font-weight: 700;\n    font-size: 14px;\n    margin: 0;\n  }\n\n  .jp-dot{\n    width: 9px;\n    height: 9px;\n    border-radius: 50%;\n    background: #d10000;\n    display: inline-block;\n    animation: jp-blink 1s infinite;\n  }\n\n  @keyframes jp-blink{\n    0%, 100% { opacity: 1; }\n    50%      { opacity: 0.15; }\n  }\n</style>"
-          }
-        },
         "liquid_kXm7Te": {
           "type": "liquid",
           "settings": {
@@ -113,6 +107,12 @@
         "badges_Yf9Gfi": {
           "type": "badges",
           "settings": {}
+        },
+        "liquid_hJpCLe": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<div class=\"jp-stock-wrap\" role=\"status\" aria-live=\"polite\">\n  <span class=\"jp-dot\" aria-hidden=\"true\"></span>\n  <span class=\"jp-stock-text\">Stock limitée: <strong>6</strong> restants</span>\n</div>\n\n<style>\n  .jp-stock-wrap{\n    display: inline-flex;\n    align-items: center;\n    gap: 8px;\n    color: #d10000;\n    font-weight: 700;\n    font-size: 14px;\n    margin: 0;\n  }\n\n  .jp-dot{\n    width: 9px;\n    height: 9px;\n    border-radius: 50%;\n    background: #d10000;\n    display: inline-block;\n    animation: jp-blink 1s infinite;\n  }\n\n  @keyframes jp-blink{\n    0%, 100% { opacity: 1; }\n    50%      { opacity: 0.15; }\n  }\n</style>"
+          }
         },
         "price_GcdNyC": {
           "type": "price",
@@ -170,11 +170,11 @@
         }
       },
       "block_order": [
-        "liquid_hJpCLe",
         "liquid_kXm7Te",
         "title_G8HWTi",
         "vendor_8RyVf9",
         "badges_Yf9Gfi",
+        "liquid_hJpCLe",
         "price_GcdNyC",
         "rating_LPhX9k",
         "separator_9V4q67",
