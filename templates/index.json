@@ -85,6 +85,117 @@
         "logo_item_border": ""
       }
     },
+    "featured_product_UAfRCT": {
+      "type": "featured-product",
+      "blocks": {
+        "liquid_kXm7Te": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "{%- liquid\n  assign rating = 4.7\n  assign review_count = 933\n\n  assign star_size = 18\n  assign tp_green = '#00B67A'\n  assign tp_grey  = '#D9D9D9'\n-%}\n\n<div class=\"jp-tp-rating\" role=\"img\" aria-label=\"Note {{ rating }} sur 5, {{ review_count }} avis\">\n  <div class=\"jp-tp-stars\" aria-hidden=\"true\">\n    {%- for i in (1..5) -%}\n      {%- assign base = i | minus: 1 -%}\n      {%- assign delta = rating | minus: base -%}\n\n      {%- if delta >= 1 -%}\n        {%- assign use_gradient = false -%}\n        {%- assign fill = tp_green -%}\n      {%- elsif delta <= 0 -%}\n        {%- assign use_gradient = false -%}\n        {%- assign fill = tp_grey -%}\n      {%- else -%}\n        {%- assign use_gradient = true -%}\n        {%- assign percent = delta | times: 100 | round -%}\n      {%- endif -%}\n\n      <svg class=\"jp-tp-star\" width=\"{{ star_size }}\" height=\"{{ star_size }}\" viewBox=\"0 0 24 24\" focusable=\"false\" aria-hidden=\"true\">\n        {%- if use_gradient -%}\n          <defs>\n            <linearGradient id=\"jp-grad-{{ i }}\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"0%\">\n              <stop offset=\"{{ percent }}%\" stop-color=\"{{ tp_green }}\"></stop>\n              <stop offset=\"{{ percent }}%\" stop-color=\"{{ tp_grey }}\"></stop>\n            </linearGradient>\n          </defs>\n          <path fill=\"url(#jp-grad-{{ i }})\" d=\"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\"/>\n        {%- else -%}\n          <path fill=\"{{ fill }}\" d=\"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\"/>\n        {%- endif -%}\n      </svg>\n    {%- endfor -%}\n  </div>\n\n  <span class=\"jp-tp-score\">{{ rating }}</span>\n  <span class=\"jp-tp-count\">({{ review_count }} avis)</span>\n</div>\n\n<style>\n  .jp-tp-rating{\n    display:inline-flex;\n    align-items:center;\n    gap:8px;\n    line-height:1;\n  }\n  .jp-tp-stars{\n    display:inline-flex;\n    align-items:center;\n    gap:3px;\n  }\n  .jp-tp-star{ display:block; }\n  .jp-tp-score{\n    font-size:14px;\n    font-weight:600;\n  }\n  .jp-tp-count{\n    font-size:14px;\n    opacity:.85;\n    white-space:nowrap;\n  }\n</style>"
+          }
+        },
+        "title_G8HWTi": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h4"
+          }
+        },
+        "vendor_8RyVf9": {
+          "type": "vendor",
+          "settings": {}
+        },
+        "badges_Yf9Gfi": {
+          "type": "badges",
+          "settings": {}
+        },
+        "price_GcdNyC": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "rating_LPhX9k": {
+          "type": "rating",
+          "settings": {
+            "show_empty": false
+          }
+        },
+        "separator_9V4q67": {
+          "type": "separator",
+          "settings": {}
+        },
+        "description_iMTUEk": {
+          "type": "description",
+          "settings": {
+            "icon": "none",
+            "icon_width": 20,
+            "collapse_content": false
+          }
+        },
+        "variant_picker_heCNbA": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "stack_blocks": true,
+            "selector_style": "block",
+            "swatch_selector_style": "swatch",
+            "variant_image_options": "",
+            "size_chart_page": ""
+          }
+        },
+        "quantity_selector_4DUrdr": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_M9Mj6j": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": true,
+            "show_gift_card_recipient": true,
+            "atc_button_background": "",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "pickup_availability_Gn6Cir": {
+          "type": "pickup_availability",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "liquid_kXm7Te",
+        "title_G8HWTi",
+        "vendor_8RyVf9",
+        "badges_Yf9Gfi",
+        "price_GcdNyC",
+        "rating_LPhX9k",
+        "separator_9V4q67",
+        "description_iMTUEk",
+        "variant_picker_heCNbA",
+        "quantity_selector_4DUrdr",
+        "buy_buttons_M9Mj6j",
+        "pickup_availability_Gn6Cir"
+      ],
+      "name": "Featured product",
+      "settings": {
+        "full_width": true,
+        "product": "cure-ube",
+        "desktop_media_width": 55,
+        "desktop_media_layout": "carousel_thumbnails_left",
+        "mobile_media_size": "expanded",
+        "mobile_carousel_control": "floating_dots",
+        "enable_video_autoplay": true,
+        "enable_video_looping": false,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 3,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "input_background": "rgba(0,0,0,0)",
+        "input_text_color": ""
+      }
+    },
     "rich_text_wJf4k9": {
       "type": "rich-text",
       "blocks": {
@@ -325,122 +436,12 @@
         "drag_cursor_background": "#ffffff",
         "drag_cursor_color": "#000000"
       }
-    },
-    "featured_product_UAfRCT": {
-      "type": "featured-product",
-      "blocks": {
-        "liquid_kXm7Te": {
-          "type": "liquid",
-          "settings": {
-            "liquid": "{%- liquid\n  comment\n    ✅ À MODIFIER ICI :\n    - rating : note sur 5 (ex 4.8)\n    - review_count : nombre d'avis (ex 483)\n  endcomment\n\n  assign rating = 4.8\n  assign review_count = 483\n\n  assign star_size = 18\n  assign tp_green = '#00B67A'\n  assign tp_grey  = '#D9D9D9'\n-%}\n\n<div class=\"jp-trustpilot-rating\" role=\"img\" aria-label=\"Note {{ rating }} sur 5, {{ review_count }} avis\">\n  <div class=\"jp-stars\" aria-hidden=\"true\">\n    {%- for i in (1..5) -%}\n      {%- assign base = i | minus: 1 -%}\n      {%- assign delta = rating | minus: base -%}\n\n      {%- if delta >= 1 -%}\n        {%- assign fill = tp_green -%}\n        {%- assign use_gradient = false -%}\n      {%- elsif delta <= 0 -%}\n        {%- assign fill = tp_grey -%}\n        {%- assign use_gradient = false -%}\n      {%- else -%}\n        {%- assign percent = delta | times: 100 | round -%}\n        {%- assign use_gradient = true -%}\n      {%- endif -%}\n\n      <svg class=\"jp-star\" width=\"{{ star_size }}\" height=\"{{ star_size }}\" viewBox=\"0 0 24 24\" focusable=\"false\" aria-hidden=\"true\">\n        {%- if use_gradient -%}\n          <defs>\n            <linearGradient id=\"jp-grad-{{ i }}\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"0%\">\n              <stop offset=\"{{ percent }}%\" stop-color=\"{{ tp_green }}\"></stop>\n              <stop offset=\"{{ percent }}%\" stop-color=\"{{ tp_grey }}\"></stop>\n            </linearGradient>\n          </defs>\n          <path fill=\"url(#jp-grad-{{ i }})\" d=\"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\"/>\n        {%- else -%}\n          <path fill=\"{{ fill }}\" d=\"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\"/>\n        {%- endif -%}\n      </svg>\n    {%- endfor -%}\n  </div>\n\n  <span class=\"jp-count\">({{ review_count }} avis)</span>\n</div>\n\n<style>\n  .jp-trustpilot-rating{\n    display:inline-flex;\n    align-items:center;\n    gap:8px;\n    line-height:1;\n  }\n  .jp-stars{\n    display:inline-flex;\n    align-items:center;\n    gap:3px;\n  }\n  .jp-star{\n    display:block;\n  }\n  .jp-count{\n    font-size: 14px;\n    opacity: .85;\n    white-space: nowrap;\n  }\n</style>"
-          }
-        },
-        "vendor_8RyVf9": {
-          "type": "vendor",
-          "settings": {}
-        },
-        "title_G8HWTi": {
-          "type": "title",
-          "settings": {
-            "heading_tag": "h4"
-          }
-        },
-        "badges_Yf9Gfi": {
-          "type": "badges",
-          "settings": {}
-        },
-        "price_GcdNyC": {
-          "type": "price",
-          "settings": {
-            "show_taxes_notice": false
-          }
-        },
-        "rating_LPhX9k": {
-          "type": "rating",
-          "settings": {
-            "show_empty": false
-          }
-        },
-        "separator_9V4q67": {
-          "type": "separator",
-          "settings": {}
-        },
-        "description_iMTUEk": {
-          "type": "description",
-          "settings": {
-            "icon": "none",
-            "icon_width": 20,
-            "collapse_content": false
-          }
-        },
-        "variant_picker_heCNbA": {
-          "type": "variant_picker",
-          "settings": {
-            "hide_sold_out_variants": false,
-            "stack_blocks": true,
-            "selector_style": "block",
-            "swatch_selector_style": "swatch",
-            "variant_image_options": "",
-            "size_chart_page": ""
-          }
-        },
-        "quantity_selector_4DUrdr": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
-        "buy_buttons_M9Mj6j": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_payment_button": true,
-            "show_gift_card_recipient": true,
-            "atc_button_background": "",
-            "atc_button_text_color": "",
-            "payment_button_background": "",
-            "payment_button_text_color": ""
-          }
-        },
-        "pickup_availability_Gn6Cir": {
-          "type": "pickup_availability",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "liquid_kXm7Te",
-        "vendor_8RyVf9",
-        "title_G8HWTi",
-        "badges_Yf9Gfi",
-        "price_GcdNyC",
-        "rating_LPhX9k",
-        "separator_9V4q67",
-        "description_iMTUEk",
-        "variant_picker_heCNbA",
-        "quantity_selector_4DUrdr",
-        "buy_buttons_M9Mj6j",
-        "pickup_availability_Gn6Cir"
-      ],
-      "name": "Featured product",
-      "settings": {
-        "full_width": true,
-        "product": "cure-ube",
-        "desktop_media_width": 55,
-        "desktop_media_layout": "carousel_thumbnails_left",
-        "mobile_media_size": "expanded",
-        "mobile_carousel_control": "floating_dots",
-        "enable_video_autoplay": true,
-        "enable_video_looping": false,
-        "enable_image_zoom": true,
-        "max_image_zoom_level": 3,
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "input_background": "rgba(0,0,0,0)",
-        "input_text_color": ""
-      }
     }
   },
   "order": [
     "image_with_text_overlay_TPN3Fp",
     "logo_list_KN8xhb",
+    "featured_product_UAfRCT",
     "rich_text_wJf4k9",
     "image_with_text_overlay_7eA9LR",
     "rich_text_FbCrq7",
@@ -448,7 +449,6 @@
     "rich_text_mXcDAg",
     "multi_column_9LJNdm",
     "rich_text_tfzmWg",
-    "before_after_image_Xpt67W",
-    "featured_product_UAfRCT"
+    "before_after_image_Xpt67W"
   ]
 }
