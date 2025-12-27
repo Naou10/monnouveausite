@@ -421,6 +421,12 @@
             "payment_button_text_color": "#f0c417"
           }
         },
+        "liquid_6dAzBW": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<!-- HTML -->\n<div id=\"visitor-counter\" class=\"visitor-counter\">\n  <span id=\"visitor-text\">10 personnes consultent cette offre en ce moment.</span>\n</div>\n\n<!-- CSS pour le clignotement -->\n<style>\n  .visitor-counter {\n    font-size: 18px;\n    font-weight: bold;\n    color: #ff5733; /* Change la couleur à ta préférence */\n  }\n  .visitor-counter span {\n    animation: blink 1.5s infinite;\n  }\n  @keyframes blink {\n    0% { opacity: 1; }\n    50% { opacity: 0; }\n    100% { opacity: 1; }\n  }\n</style>\n\n<!-- JavaScript pour le changement aléatoire -->\n<script>\n  const numbers = [10, 12, 15, 7];\n  const visitorText = document.getElementById('visitor-text');\n  \n  function changeVisitorCount() {\n    const randomNumber = numbers[Math.floor(Math.random() * numbers.length)];\n    visitorText.textContent = `${randomNumber} personnes consultent cette offre en ce moment.`;\n  }\n\n  // Change le texte toutes les 3 secondes\n  setInterval(changeVisitorCount, 3000);\n</script>"
+          }
+        },
         "pickup_availability_Gn6Cir": {
           "type": "pickup_availability",
           "settings": {}
@@ -449,6 +455,7 @@
         "quantity_selector_4DUrdr",
         "image_mx4qLH",
         "buy_buttons_M9Mj6j",
+        "liquid_6dAzBW",
         "pickup_availability_Gn6Cir",
         "image_gkkr4z"
       ],
