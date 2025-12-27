@@ -424,6 +424,14 @@
         "pickup_availability_Gn6Cir": {
           "type": "pickup_availability",
           "settings": {}
+        },
+        "image_gkkr4z": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/atisfait_ou_rembourse.jpg",
+            "alignment": "center",
+            "max_width": 500
+          }
         }
       },
       "block_order": [
@@ -441,7 +449,8 @@
         "quantity_selector_4DUrdr",
         "image_mx4qLH",
         "buy_buttons_M9Mj6j",
-        "pickup_availability_Gn6Cir"
+        "pickup_availability_Gn6Cir",
+        "image_gkkr4z"
       ],
       "name": "Featured product",
       "settings": {
