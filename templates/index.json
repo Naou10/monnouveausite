@@ -506,8 +506,8 @@
           "settings": {
             "icon": "none",
             "icon_width": 20,
-            "title": "Question 3",
-            "content": "<p>Write content to help your customers to better understand your products or policies.</p>",
+            "title": "Livraison Rapide",
+            "content": "<p>Livraison depuis la France, 24 à 72 heures maximum jusqu’à votre domicile.</p><p>Nous nous engageons à expédier votre commande rapidement, pour que vous puissiez profiter de votre UBE sans attendre ! Le tout, avec <strong>un service fiable</strong> et <strong>rapide</strong>, directement depuis la France.</p>",
             "page": ""
           }
         }
