@@ -438,6 +438,12 @@
             "alignment": "center",
             "max_width": 500
           }
+        },
+        "liquid_FGb3TP": {
+          "type": "liquid",
+          "settings": {
+            "liquid": "<script>\n  // Données des titres et textes\n  const contentData = [\n    { title: \"Protection cellulaire\", text: \"Sa richesse en anthocyanines, renforcée par la vitamine C, aide à neutraliser les radicaux libres et soutient les défenses naturelles de l’organisme.\" },\n    { title: \"Confort digestif\", text: \"Grâce à sa teneur en fibres solubles et insolubles, il favorise un transit régulier et contribue à l'équilibre du microbiote intestinal.\" },\n    { title: \"Apport énergétique modéré\", text: \"Source de glucides complexes, l’UBE fournit l’énergie de manière progressive, limitant les variations de la glycémie et les sensations de fatigue.\" },\n    { title: \"Apport en micronutriments essentiels\", text: \"Naturellement riche en potassium, fer, manganèse et vitamines du groupe B (notamment B6), il soutient les fonctions musculaires, nerveuses et métaboliques.\" },\n    { title: \"Intérêt nutritionnel dans les régimes spécifiques\", text: \"Naturellement sans gluten, pauvre en graisses et à index glycémique modéré, l’UBE s'intègre facilement dans une alimentation végétarienne ou dans un contrôle de la glycémie.\" }\n  ];\n\n  let currentIndex = 0; // Index initial\n\n  const contentTitle = document.getElementById(\"content-title\");\n  const contentText = document.getElementById(\"content-text\");\n\n  // Afficher le contenu à l'index actuel\n  function displayContent(index) {\n    contentTitle.textContent = contentData[index].title;\n    contentText.textContent = contentData[index].text;\n  }\n\n  // Boutons de navigation\n  const prevButton = document.getElementById(\"prev-button\");\n  const nextButton = document.getElementById(\"next-button\");\n\n  // Action lors du clic sur la flèche gauche\n  prevButton.addEventListener(\"click\", () => {\n    currentIndex = (currentIndex === 0) ? contentData.length - 1 : currentIndex - 1;\n    displayContent(currentIndex);\n  });\n\n  // Action lors du clic sur la flèche droite\n  nextButton.addEventListener(\"click\", () => {\n    currentIndex = (currentIndex === contentData.length - 1) ? 0 : currentIndex + 1;\n    displayContent(currentIndex);\n  });\n\n  // Initialiser avec le premier contenu\n  displayContent(currentIndex);\n</script>"
+          }
         }
       },
       "block_order": [
@@ -457,7 +463,8 @@
         "buy_buttons_M9Mj6j",
         "liquid_6dAzBW",
         "pickup_availability_Gn6Cir",
-        "image_gkkr4z"
+        "image_gkkr4z",
+        "liquid_FGb3TP"
       ],
       "name": "Featured product",
       "settings": {
