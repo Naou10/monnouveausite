@@ -6,20 +6,16 @@
 {%- endcomment -%}
 
  {%- liquid
-  # VIDEOS (on ne connaît avec certitude que recettes)
-  assign v1 = product.metafields.custom.custom_video_bienfaits | default: product.metafields.custom.video_bienfaits
-  assign v2 = product.metafields.custom.custom_video_unboxing  | default: product.metafields.custom.video_unboxing
-  assign v3 = product.metafields.custom.custom_video_preparation | default: product.metafields.custom.video_preparation
-  assign v4 = product.metafields.custom.custom_video_recettes   | default: product.metafields.custom.video_recettes
+  assign v1 = product.metafields.custom.custom_video_bienfaits
+  assign v2 = product.metafields.custom.custom_video_unboxing
+  assign v3 = product.metafields.custom.custom_video_preparation
+  assign v4 = product.metafields.custom.custom_video_recettes
 
-  # POSTERS (tu m’as donné 3 clés)
-  assign p1 = product.metafields.custom.custom_poster_bienfaits  | default: product.metafields.custom.poster_bienfaits
-  assign p2 = product.metafields.custom.custom_poster_unboxing   | default: product.metafields.custom.poster_unboxing
-  assign p3 = product.metafields.custom.custom_poster_preparation | default: product.metafields.custom.poster_preparation
-  assign p4 = product.metafields.custom.custom_poster_recettes   | default: product.metafields.custom.poster_recettes
+  assign p1 = product.metafields.custom.custom_poster_bienfaits
+  assign p2 = product.metafields.custom.custom_poster_unboxing
+  assign p3 = product.metafields.custom.custom_poster_preparation
+  assign p4 = product.metafields.custom.custom_poster_recettes
 -%}
-
-
   assign initial_src = blank
   assign initial_poster = blank
 
