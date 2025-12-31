@@ -1,0 +1,183 @@
+{%- comment -%}
+  Video Tabs (ronds) - Impact
+  Requiert les metafields:
+  custom.video_bienfaits / unboxing / preparation / recettes (File)
+  custom.poster_* (Image) optionnels
+{%- endcomment -%}
+
+{%- liquid
+  assign v1 = product.metafields.custom.video_bienfaits
+  assign v2 = product.metafields.custom.video_unboxing
+  assign v3 = product.metafields.custom.video_preparation
+  assign v4 = product.metafields.custom.video_recettes
+
+  assign p1 = product.metafields.custom.poster_bienfaits
+  assign p2 = product.metafields.custom.poster_unboxing
+  assign p3 = product.metafields.custom.poster_preparation
+  assign p4 = product.metafields.custom.poster_recettes
+
+  assign initial_src = blank
+  assign initial_poster = blank
+
+  if v1 != blank
+    assign initial_src = v1.value | file_url
+    if p1 != blank
+      assign initial_poster = p1.value | image_url: width: 1200
+    endif
+  elsif v2 != blank
+    assign initial_src = v2.value | file_url
+    if p2 != blank
+      assign initial_poster = p2.value | image_url: width: 1200
+    endif
+  elsif v3 != blank
+    assign initial_src = v3.value | file_url
+    if p3 != blank
+      assign initial_poster = p3.value | image_url: width: 1200
+    endif
+  elsif v4 != blank
+    assign initial_src = v4.value | file_url
+    if p4 != blank
+      assign initial_poster = p4.value | image_url: width: 1200
+    endif
+  endif
+-%}
+
+{%- if initial_src != blank -%}
+  <div class="vtabs" data-vtabs id="vtabs-{{ section.id }}-{{ block.id }}">
+    <div class="vtabs__player">
+      <video class="vtabs__video" controls playsinline preload="metadata"
+        {% if initial_poster != blank %}poster="{{ initial_poster }}"{% endif %}>
+        <source src="{{ initial_src }}" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="vtabs__tabs" role="tablist" aria-label="Vidéos">
+      {%- if v1 != blank -%}
+        <button type="button" class="vtabs__tab is-active" role="tab" aria-selected="true"
+          data-src="{{ v1.value | file_url }}"
+          {% if p1 != blank %}data-poster="{{ p1.value | image_url: width: 1200 }}"{% endif %}>
+          <span class="vtabs__thumb"
+            {% if p1 != blank %}style="background-image:url('{{ p1.value | image_url: width: 300 }}')"{% endif %}>
+            <span class="vtabs__play" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22">
+                <path fill="currentColor" d="M8 5v14l11-7z"></path>
+              </svg>
+            </span>
+          </span>
+          <span class="vtabs__label">Bienfaits</span>
+        </button>
+      {%- endif -%}
+
+      {%- if v2 != blank -%}
+        <button type="button" class="vtabs__tab" role="tab" aria-selected="false"
+          data-src="{{ v2.value | file_url }}"
+          {% if p2 != blank %}data-poster="{{ p2.value | image_url: width: 1200 }}"{% endif %}>
+          <span class="vtabs__thumb"
+            {% if p2 != blank %}style="background-image:url('{{ p2.value | image_url: width: 300 }}')"{% endif %}>
+            <span class="vtabs__play" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22">
+                <path fill="currentColor" d="M8 5v14l11-7z"></path>
+              </svg>
+            </span>
+          </span>
+          <span class="vtabs__label">Unboxing</span>
+        </button>
+      {%- endif -%}
+
+      {%- if v3 != blank -%}
+        <button type="button" class="vtabs__tab" role="tab" aria-selected="false"
+          data-src="{{ v3.value | file_url }}"
+          {% if p3 != blank %}data-poster="{{ p3.value | image_url: width: 1200 }}"{% endif %}>
+          <span class="vtabs__thumb"
+            {% if p3 != blank %}style="background-image:url('{{ p3.value | image_url: width: 300 }}')"{% endif %}>
+            <span class="vtabs__play" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22">
+                <path fill="currentColor" d="M8 5v14l11-7z"></path>
+              </svg>
+            </span>
+          </span>
+          <span class="vtabs__label">Préparation</span>
+        </button>
+      {%- endif -%}
+
+      {%- if v4 != blank -%}
+        <button type="button" class="vtabs__tab" role="tab" aria-selected="false"
+          data-src="{{ v4.value | file_url }}"
+          {% if p4 != blank %}data-poster="{{ p4.value | image_url: width: 1200 }}"{% endif %}>
+          <span class="vtabs__thumb"
+            {% if p4 != blank %}style="background-image:url('{{ p4.value | image_url: width: 300 }}')"{% endif %}>
+            <span class="vtabs__play" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22">
+                <path fill="currentColor" d="M8 5v14l11-7z"></path>
+              </svg>
+            </span>
+          </span>
+          <span class="vtabs__label">Recettes</span>
+        </button>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <style>
+    #vtabs-{{ section.id }}-{{ block.id }} { margin-top: 16px; }
+    #vtabs-{{ section.id }}-{{ block.id }} .vtabs__player { margin-bottom: 14px; }
+    #vtabs-{{ section.id }}-{{ block.id }} .vtabs__video { width: 100%; height: auto; border-radius: 14px; }
+    #vtabs-{{ section.id }}-{{ block.id }} .vtabs__tabs { display:flex; gap:16px; flex-wrap:wrap; align-items:flex-start; }
+    #vtabs-{{ section.id }}-{{ block.id }} .vtabs__tab { background:transparent; border:0; padding:0; cursor:pointer; text-align:center; }
+    #vtabs-{{ section.id }}-{{ block.id }} .vtabs__thumb {
+      width:78px; height:78px; border-radius:9999px;
+      border:2px solid rgba(var(--color-foreground), .25);
+      background-size:cover; background-position:center;
+      position:relative; display:block; overflow:hidden;
+    }
+    #vtabs-{{ section.id }}-{{ block.id }} .vtabs__thumb::after{
+      content:""; position:absolute; inset:0; background:rgba(0,0,0,.12);
+    }
+    #vtabs-{{ section.id }}-{{ block.id }} .vtabs__play{
+      position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+      color:#fff; z-index:2;
+    }
+    #vtabs-{{ section.id }}-{{ block.id }} .vtabs__tab.is-active .vtabs__thumb{
+      border-color: rgb(var(--color-foreground));
+      box-shadow: 0 0 0 3px rgba(var(--color-foreground), .12);
+    }
+    #vtabs-{{ section.id }}-{{ block.id }} .vtabs__label{
+      display:block; margin-top:8px; font-size: .92rem; line-height:1.1;
+    }
+  </style>
+
+  <script>
+    (function() {
+      const root = document.getElementById('vtabs-{{ section.id }}-{{ block.id }}');
+      if (!root || root.dataset.inited === '1') return;
+      root.dataset.inited = '1';
+
+      const video = root.querySelector('.vtabs__video');
+      const source = video ? video.querySelector('source') : null;
+      const tabs = root.querySelectorAll('.vtabs__tab');
+
+      if (!video || !source || !tabs.length) return;
+
+      tabs.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const src = btn.dataset.src;
+          if (!src) return;
+
+          tabs.forEach(t => { t.classList.remove('is-active'); t.setAttribute('aria-selected', 'false'); });
+          btn.classList.add('is-active');
+          btn.setAttribute('aria-selected', 'true');
+
+          const poster = btn.dataset.poster || '';
+          if (source.getAttribute('src') !== src) {
+            source.setAttribute('src', src);
+            if (poster) video.setAttribute('poster', poster);
+            else video.removeAttribute('poster');
+            video.load();
+          }
+
+          video.play().catch(() => {});
+        });
+      });
+    })();
+  </script>
+{%- endif -%}
