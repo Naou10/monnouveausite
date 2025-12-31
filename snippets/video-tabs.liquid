@@ -4,8 +4,7 @@
   custom.video_bienfaits / unboxing / preparation / recettes (File)
   custom.poster_* (Image) optionnels
 {%- endcomment -%}
-
- {%- liquid
+{%- liquid
   assign v1 = product.metafields.custom.custom_video_bienfaits
   assign v2 = product.metafields.custom.custom_video_unboxing
   assign v3 = product.metafields.custom.custom_video_preparation
@@ -15,7 +14,7 @@
   assign p2 = product.metafields.custom.custom_poster_unboxing
   assign p3 = product.metafields.custom.custom_poster_preparation
   assign p4 = product.metafields.custom.custom_poster_recettes
--%}
+
   assign initial_src = blank
   assign initial_poster = blank
 
@@ -41,15 +40,28 @@
     endif
   endif
 -%}
-{%- if request.design_mode -%}
-  <div style="border:1px dashed #999;padding:10px;margin:10px 0;font-size:12px;">
-    <strong>DEBUG video-tabs</strong><br>
-    bienfaits: <pre style="white-space:pre-wrap;margin:6px 0;">{{ product.metafields.custom.video_bienfaits | json }}</pre>
-    unboxing: <pre style="white-space:pre-wrap;margin:6px 0;">{{ product.metafields.custom.video_unboxing | json }}</pre>
-    preparation: <pre style="white-space:pre-wrap;margin:6px 0;">{{ product.metafields.custom.video_preparation | json }}</pre>
-    recettes: <pre style="white-space:pre-wrap;margin:6px 0;">{{ product.metafields.custom.video_recettes | json }}</pre>
-  </div>
-{%- endif -%}
+  if v1 != blank
+    assign initial_src = v1.value | file_url
+    if p1 != blank
+      assign initial_poster = p1.value | image_url: width: 1200
+    endif
+  elsif v2 != blank
+    assign initial_src = v2.value | file_url
+    if p2 != blank
+      assign initial_poster = p2.value | image_url: width: 1200
+    endif
+  elsif v3 != blank
+    assign initial_src = v3.value | file_url
+    if p3 != blank
+      assign initial_poster = p3.value | image_url: width: 1200
+    endif
+  elsif v4 != blank
+    assign initial_src = v4.value | file_url
+    if p4 != blank
+      assign initial_poster = p4.value | image_url: width: 1200
+    endif
+  endif
+-%}
 {%- if initial_src != blank -%}
   <div class="vtabs" data-vtabs id="vtabs-{{ section.id }}-{{ block.id }}">
     <div class="vtabs__player">
