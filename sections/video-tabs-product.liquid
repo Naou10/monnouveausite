@@ -1,0 +1,177 @@
+{% style %}
+:root{
+  --vtabs-accent: 124, 58, 237; /* Couleur active (RGB). Dis-moi ton hex si tu veux la couleur exacte */
+}
+
+.video-tabs-wrap{width:100%}
+
+.video-tabs{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:nowrap;
+  overflow:hidden; /* pas de scroll */
+}
+
+.video-tab{
+  flex:1 1 0;
+  display:flex;
+  justify-content:center;
+  cursor:pointer;
+  min-width:0;
+  -webkit-tap-highlight-color:transparent;
+}
+
+.video-tab__thumb{
+  width:clamp(64px,20vw,92px);
+  height:clamp(64px,20vw,92px);
+  border-radius:999px;
+  overflow:hidden;
+  position:relative;
+  border:2px solid rgba(0,0,0,.12);
+  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease,filter .18s ease;
+  will-change:transform;
+}
+
+.video-tab__thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.video-tab__play{
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  background:rgba(0,0,0,.22);
+  transition:background .18s ease;
+}
+
+.video-tab__play svg{width:34px;height:34px}
+
+/* Hover/Press */
+@media (hover:hover){
+  .video-tab:hover .video-tab__thumb{
+    transform:translateY(-2px) scale(1.03);
+    filter:saturate(1.03);
+  }
+}
+.video-tab:active .video-tab__thumb{
+  transform:translateY(-1px) scale(.99);
+}
+
+/* Actif */
+.video-tab.is-active .video-tab__thumb{
+  border-color:rgba(var(--vtabs-accent),.95);
+  box-shadow:0 0 0 3px rgba(var(--vtabs-accent),.18);
+  transform:translateY(-2px) scale(1.03);
+}
+.video-tab.is-active .video-tab__play{
+  background:rgba(0,0,0,.10);
+}
+
+/* Lecteur inline */
+.video-inline{
+  margin-top:14px;
+  width:100%;
+  border-radius:16px;
+  overflow:hidden;
+  background:#000;
+  aspect-ratio:16/9;
+}
+
+.video-inline video{
+  width:100%;
+  height:100%;
+  display:block;
+  background:#000;
+}
+{% endstyle %}
+
+<div class="video-tabs-wrap" data-vtabs>
+  <div class="video-tabs">
+    {% for block in section.blocks limit: 4 %}
+      <div class="video-tab" data-vtab>
+        <div class="video-tab__thumb">
+          {% if block.settings.thumb != blank %}
+            {{ block.settings.thumb | image_url: width: 300 | image_tag: loading: 'lazy', alt: '' }}
+          {% else %}
+            <img src="https://dummyimage.com/300x300/ddd/aaa" alt="">
+          {% endif %}
+
+          <div class="video-tab__play" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none">
+              <circle cx="32" cy="32" r="24" fill="rgba(255,255,255,.92)"/>
+              <path d="M28 22v20l16-10-16-10z" fill="#111"/>
+            </svg>
+          </div>
+        </div>
+
+        <template data-video-template>
+          {% if block.settings.video != blank %}
+            {{ block.settings.video | video_tag: controls: true, autoplay: false, playsinline: true, muted: false }}
+          {% endif %}
+        </template>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="video-inline" data-video></div>
+</div>
+
+<script>
+(function(){
+  const root = document.querySelector('[data-vtabs]');
+  if(!root) return;
+
+  const tabs = Array.from(root.querySelectorAll('[data-vtab]'));
+  const videoWrap = root.querySelector('[data-video]');
+
+  function setActive(tab, tryPlay){
+    tabs.forEach(t => t.classList.remove('is-active'));
+    tab.classList.add('is-active');
+
+    const tpl = tab.querySelector('[data-video-template]');
+    videoWrap.innerHTML = '';
+    if(tpl) videoWrap.appendChild(tpl.content.cloneNode(true));
+
+    const video = videoWrap.querySelector('video');
+    if(video && tryPlay){
+      const p = video.play();
+      if(p && typeof p.catch === 'function') p.catch(()=>{});
+    }
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => setActive(tab, true));
+  });
+
+  if(tabs.length){
+    setActive(tabs[0], false);
+  }
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Vidéos ronds",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Vidéo",
+      "settings": [
+        { "type": "image_picker", "id": "thumb", "label": "Miniature" },
+        { "type": "video", "id": "video", "label": "Vidéo" }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    { "name": "Vidéos ronds" }
+  ]
+}
+{% endschema %}
