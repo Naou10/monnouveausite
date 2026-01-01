@@ -1,6 +1,6 @@
 {% style %}
 :root{
-  --vtabs-accent: 124, 58, 237; /* violet (RGB) */
+  --vtabs-accent: 124, 58, 237; /* Couleur active (RGB). Donne-moi ton hex si tu veux la couleur exacte */
 }
 
 .vtabs-{{ section.id }}{width:100%}
@@ -30,7 +30,8 @@
   overflow:hidden;
   position:relative;
   border:2px solid rgba(0,0,0,.12);
-  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;
+  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease,filter .18s ease;
+  will-change:transform;
 }
 
 .vtabs-{{ section.id }} .video-tab__thumb img{
@@ -46,14 +47,30 @@
   display:grid;
   place-items:center;
   background:rgba(0,0,0,.22);
+  transition:background .18s ease;
 }
 
 .vtabs-{{ section.id }} .video-tab__play svg{width:34px;height:34px}
 
+/* Hover/Press */
+@media (hover:hover){
+  .vtabs-{{ section.id }} .video-tab:hover .video-tab__thumb{
+    transform:translateY(-2px) scale(1.03);
+    filter:saturate(1.03);
+  }
+}
+.vtabs-{{ section.id }} .video-tab:active .video-tab__thumb{
+  transform:translateY(-1px) scale(.99);
+}
+
+/* Actif */
 .vtabs-{{ section.id }} .video-tab.is-active .video-tab__thumb{
   border-color:rgba(var(--vtabs-accent),.95);
   box-shadow:0 0 0 3px rgba(var(--vtabs-accent),.18);
   transform:translateY(-2px) scale(1.03);
+}
+.vtabs-{{ section.id }} .video-tab.is-active .video-tab__play{
+  background:rgba(0,0,0,.10);
 }
 
 /* Lecteur inline */
@@ -86,7 +103,7 @@
           {% endif %}
 
           <div class="video-tab__play" aria-hidden="true">
-            <svg viewBox="0 0 64 64">
+            <svg viewBox="0 0 64 64" fill="none">
               <circle cx="32" cy="32" r="24" fill="rgba(255,255,255,.92)"/>
               <path d="M28 22v20l16-10-16-10z" fill="#111"/>
             </svg>
@@ -97,7 +114,7 @@
           {% if block.settings.video != blank %}
             {{ block.settings.video | video_tag: controls: true, autoplay: false, playsinline: true, muted: false }}
           {% else %}
-            <div style="color:#fff; padding:14px;">Aucune vidéo sélectionnée</div>
+            <div style="color:#fff;padding:14px;">Aucune vidéo</div>
           {% endif %}
         </template>
       </div>
@@ -115,17 +132,16 @@
   const tabs = Array.from(root.querySelectorAll('[data-vtab]'));
   const videoWrap = root.querySelector('[data-video]');
 
-  function mountVideoFrom(tab, tryPlay){
-    // stop net : supprime l’ancien lecteur
-    videoWrap.innerHTML = '';
+  function setActive(tab, tryPlay){
+    tabs.forEach(t => t.classList.remove('is-active'));
+    tab.classList.add('is-active');
 
-    const tpl = tab.querySelector('template[data-video-template]');
-    if(!tpl) return;
-    videoWrap.appendChild(tpl.content.cloneNode(true));
+    const tpl = tab.querySelector('[data-video-template]');
+    videoWrap.innerHTML = '';
+    if(tpl) videoWrap.appendChild(tpl.content.cloneNode(true));
 
     const video = videoWrap.querySelector('video');
     if(video){
-      // recharge proprement
       try { video.pause(); } catch(e){}
       try { video.currentTime = 0; } catch(e){}
       try { video.load(); } catch(e){}
@@ -134,20 +150,16 @@
         setTimeout(() => {
           const p = video.play();
           if(p && typeof p.catch === 'function') p.catch(()=>{});
-        }, 50);
+        }, 60);
       }
     }
   }
 
-  function setActive(tab, tryPlay){
-    tabs.forEach(t => t.classList.remove('is-active'));
-    tab.classList.add('is-active');
-    mountVideoFrom(tab, tryPlay);
-  }
-
   tabs.forEach(tab => tab.addEventListener('click', () => setActive(tab, true)));
 
-  if(tabs.length) setActive(tabs[0], false);
+  if(tabs.length){
+    setActive(tabs[0], false);
+  }
 })();
 </script>
 
