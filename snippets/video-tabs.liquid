@@ -1,233 +1,200 @@
- {% comment %}
-  Video Tabs (ronds) - UBELA
-  Metafields attendus (namespace "custom") :
+{%- comment -%}
+  Video Tabs (ronds)
+  Metafields utilisés (namespace: custom) :
   - custom.custom_video_bienfaits
   - custom.custom_video_unboxing
   - custom.custom_video_preparation
   - custom.custom_video_recettes
-  Posters (image) optionnels :
   - custom.custom_poster_bienfaits
   - custom.custom_poster_unboxing
   - custom.custom_poster_preparation
   - custom.custom_poster_recettes
-{% endcomment %}
+
+  Ce snippet doit être rendu avec :
+  {% render 'video-tabs', product: product, block: block, section: section %}
+{%- endcomment -%}
 
 {%- liquid
-  assign v1 = product.metafields.custom.custom_video_bienfaits
-  assign v2 = product.metafields.custom.custom_video_unboxing
-  assign v3 = product.metafields.custom.custom_video_preparation
-  assign v4 = product.metafields.custom.custom_video_recettes
+  assign p = product
+  if p == blank and section.settings.product != blank
+    assign p = section.settings.product
+  endif
 
-  assign p1 = product.metafields.custom.custom_poster_bienfaits
-  assign p2 = product.metafields.custom.custom_poster_unboxing
-  assign p3 = product.metafields.custom.custom_poster_preparation
-  assign p4 = product.metafields.custom.custom_poster_recettes
+  assign block_id = block.id | default: 'x'
+  assign uid = 'ube-video-tabs-' | append: section.id | append: '-' | append: block_id
+
+  assign v1_mf = p.metafields.custom.custom_video_bienfaits
+  assign v2_mf = p.metafields.custom.custom_video_unboxing
+  assign v3_mf = p.metafields.custom.custom_video_preparation
+  assign v4_mf = p.metafields.custom.custom_video_recettes
+
+  assign v1_url = v1_mf.value | file_url
+  assign v2_url = v2_mf.value | file_url
+  assign v3_url = v3_mf.value | file_url
+  assign v4_url = v4_mf.value | file_url
+
+  assign p1_mf = p.metafields.custom.custom_poster_bienfaits
+  assign p2_mf = p.metafields.custom.custom_poster_unboxing
+  assign p3_mf = p.metafields.custom.custom_poster_preparation
+  assign p4_mf = p.metafields.custom.custom_poster_recettes
+
+  assign p1_url = p1_mf.value | image_url: width: 240
+  assign p2_url = p2_mf.value | image_url: width: 240
+  assign p3_url = p3_mf.value | image_url: width: 240
+  assign p4_url = p4_mf.value | image_url: width: 240
 
   assign has_any = false
-  if v1 != blank or v2 != blank or v3 != blank or v4 != blank
+  if v1_url != blank or v2_url != blank or v3_url != blank or v4_url != blank
     assign has_any = true
   endif
-
-  if has_any == false
-    if request.design_mode
-      echo '<div style="border:1px dashed #bbb;padding:12px;border-radius:10px;font-size:12px;">Ajoute au moins 1 vidéo dans les métachamps (custom_video_*) pour afficher les ronds.</div>'
-    endif
-    break
-  endif
-
-  assign uid = 'ube-video-tabs-' | append: section.id | append: '-' | append: block.id
 -%}
 
+{%- if has_any == false -%}
+  {%- if request.design_mode -%}
+    <div style="border:1px dashed #bbb; padding:12px; border-radius:10px; font-size:12px;">
+      Ajoute au moins 1 vidéo dans les métachamps (custom_video_*) pour afficher les ronds.
+    </div>
+  {%- endif -%}
+{%- else -%}
+
 <style>
-  .ube-video-tabs { margin-top: 12px; }
-  .ube-video-tabs__row { display:flex; gap:14px; align-items:flex-start; flex-wrap:wrap; }
-  .ube-video-tabs__item { display:flex; flex-direction:column; align-items:center; gap:8px; }
-  .ube-video-tabs__btn{
-    width:78px; height:78px; border-radius:999px; padding:0;
+  .ube-video-tabs{ margin-top:12px; }
+  .ube-video-tabs__grid{
+    display:grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4 ronds côte à côte sur mobile */
+    gap:10px;
+    align-items:start;
+  }
+  .ube-video-tabs__item{
+    border:0; background:transparent; padding:0; cursor:pointer;
+    display:flex; flex-direction:column; align-items:center; gap:6px;
+  }
+  .ube-video-tabs__circle{
+    width:64px; height:64px; border-radius:999px;
     border:2px solid rgba(0,0,0,.15);
-    background:transparent; cursor:pointer;
     overflow:hidden; position:relative;
+    background:#f3f3f3;
   }
-  .ube-video-tabs__btn:hover { border-color: rgba(0,0,0,.35); }
-  .ube-video-tabs__btn:focus-visible { outline: 2px solid rgba(0,0,0,.65); outline-offset: 2px; }
-
-  .ube-video-tabs__thumb {
-    width:100%; height:100%; object-fit:cover; display:block;
+  .ube-video-tabs__circle img{
+    width:100%; height:100%; display:block; object-fit:cover;
   }
-  .ube-video-tabs__thumb--placeholder{
-    width:100%; height:100%;
-    background: radial-gradient(circle at 30% 30%, rgba(0,0,0,.08), rgba(0,0,0,.03));
-  }
-
   .ube-video-tabs__play{
     position:absolute; inset:0;
     display:flex; align-items:center; justify-content:center;
     pointer-events:none;
   }
-  .ube-video-tabs__play::before{
-    content:"";
-    width:24px; height:24px;
-    background: rgba(0,0,0,.65);
-    clip-path: polygon(35% 25%, 35% 75%, 80% 50%);
-    border-radius: 3px;
-    filter: drop-shadow(0 2px 6px rgba(0,0,0,.25));
+  .ube-video-tabs__play svg{
+    width:18px; height:18px;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,.35));
+  }
+  .ube-video-tabs__label{
+    font-size:12px; line-height:1.1; text-align:center;
   }
 
-  .ube-video-tabs__label{
-    font-size:12px; line-height:1.2;
-    text-align:center;
+  /* Un peu plus grand sur desktop */
+  @media (min-width: 750px){
+    .ube-video-tabs__circle{ width:72px; height:72px; }
+    .ube-video-tabs__grid{ gap:14px; }
   }
 
   /* Modal */
   .ube-video-tabs__modal{
-    position:fixed; inset:0;
-    background: rgba(0,0,0,.65);
+    position:fixed; inset:0; background:rgba(0,0,0,.65);
     display:flex; align-items:center; justify-content:center;
-    padding:18px; z-index: 9999;
+    padding:18px; z-index:9999;
   }
   .ube-video-tabs__modal[hidden]{ display:none; }
   .ube-video-tabs__panel{
     width:min(920px, 100%);
-    background:#000;
-    border-radius:16px;
-    overflow:hidden;
+    background:#000; border-radius:16px; overflow:hidden;
     position:relative;
-    box-shadow: 0 20px 60px rgba(0,0,0,.35);
   }
   .ube-video-tabs__close{
     position:absolute; top:10px; right:10px;
     width:38px; height:38px; border-radius:999px;
-    border:0; cursor:pointer;
-    background: rgba(255,255,255,.16);
-    color:#fff; font-size:20px; line-height:38px;
+    border:0; background:rgba(255,255,255,.12); color:#fff;
+    cursor:pointer; font-size:22px; line-height:38px;
   }
   .ube-video-tabs__player{
-    width:100%; height:auto; display:block;
-    background:#000;
-  }
-
-  /* ✅ Mobile : 4 ronds sur une seule ligne */
-  @media (max-width: 749px){
-    .ube-video-tabs__row{
-      display:grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap:10px;
-      justify-items:center;
-    }
-    .ube-video-tabs__btn{ width:62px; height:62px; }
-    .ube-video-tabs__label{ font-size:11px; }
-  }
-
-  @media (max-width: 360px){
-    .ube-video-tabs__btn{ width:56px; height:56px; }
+    width:100%; height:auto; display:block; background:#000;
   }
 </style>
 
 <div class="ube-video-tabs" id="{{ uid }}">
-  <div class="ube-video-tabs__row" aria-label="Vidéos">
-
-    {%- comment -%} 1) Bienfaits {%- endcomment -%}
-    {%- if v1 != blank -%}
-      {%- liquid
-        assign src1 = v1.value | file_url
-        assign thumb1 = blank
-        if p1 != blank and p1.value != blank
-          assign thumb1 = p1.value | image_url: width: 300
-        elsif v1.value.preview_image != blank
-          assign thumb1 = v1.value.preview_image | image_url: width: 300
-        endif
-      -%}
-      <div class="ube-video-tabs__item">
-        <button class="ube-video-tabs__btn" type="button" data-src="{{ src1 }}" aria-label="Vidéo Bienfaits">
-          {%- if thumb1 != blank -%}
-            <img class="ube-video-tabs__thumb" src="{{ thumb1 }}" alt="">
-          {%- else -%}
-            <div class="ube-video-tabs__thumb--placeholder" aria-hidden="true"></div>
+  <div class="ube-video-tabs__grid" aria-label="Vidéos">
+    {%- if v1_url != blank -%}
+      <button class="ube-video-tabs__item" type="button" data-src="{{ v1_url | escape }}" aria-label="Lire vidéo Bienfaits">
+        <span class="ube-video-tabs__circle">
+          {%- if p1_url != blank -%}
+            <img src="{{ p1_url }}" alt="" loading="lazy">
           {%- endif -%}
-          <span class="ube-video-tabs__play" aria-hidden="true"></span>
-        </button>
-        <div class="ube-video-tabs__label">Bienfaits</div>
-      </div>
+          <span class="ube-video-tabs__play" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M10 8.5V15.5L16 12L10 8.5Z" fill="white"/>
+              <circle cx="12" cy="12" r="10" stroke="white" stroke-width="1.5" opacity=".85"/>
+            </svg>
+          </span>
+        </span>
+        <span class="ube-video-tabs__label">Bienfaits</span>
+      </button>
     {%- endif -%}
 
-    {%- comment -%} 2) Unboxing {%- endcomment -%}
-    {%- if v2 != blank -%}
-      {%- liquid
-        assign src2 = v2.value | file_url
-        assign thumb2 = blank
-        if p2 != blank and p2.value != blank
-          assign thumb2 = p2.value | image_url: width: 300
-        elsif v2.value.preview_image != blank
-          assign thumb2 = v2.value.preview_image | image_url: width: 300
-        endif
-      -%}
-      <div class="ube-video-tabs__item">
-        <button class="ube-video-tabs__btn" type="button" data-src="{{ src2 }}" aria-label="Vidéo Unboxing">
-          {%- if thumb2 != blank -%}
-            <img class="ube-video-tabs__thumb" src="{{ thumb2 }}" alt="">
-          {%- else -%}
-            <div class="ube-video-tabs__thumb--placeholder" aria-hidden="true"></div>
+    {%- if v2_url != blank -%}
+      <button class="ube-video-tabs__item" type="button" data-src="{{ v2_url | escape }}" aria-label="Lire vidéo Unboxing">
+        <span class="ube-video-tabs__circle">
+          {%- if p2_url != blank -%}
+            <img src="{{ p2_url }}" alt="" loading="lazy">
           {%- endif -%}
-          <span class="ube-video-tabs__play" aria-hidden="true"></span>
-        </button>
-        <div class="ube-video-tabs__label">Unboxing</div>
-      </div>
+          <span class="ube-video-tabs__play" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M10 8.5V15.5L16 12L10 8.5Z" fill="white"/>
+              <circle cx="12" cy="12" r="10" stroke="white" stroke-width="1.5" opacity=".85"/>
+            </svg>
+          </span>
+        </span>
+        <span class="ube-video-tabs__label">Unboxing</span>
+      </button>
     {%- endif -%}
 
-    {%- comment -%} 3) Préparation {%- endcomment -%}
-    {%- if v3 != blank -%}
-      {%- liquid
-        assign src3 = v3.value | file_url
-        assign thumb3 = blank
-        if p3 != blank and p3.value != blank
-          assign thumb3 = p3.value | image_url: width: 300
-        elsif v3.value.preview_image != blank
-          assign thumb3 = v3.value.preview_image | image_url: width: 300
-        endif
-      -%}
-      <div class="ube-video-tabs__item">
-        <button class="ube-video-tabs__btn" type="button" data-src="{{ src3 }}" aria-label="Vidéo Préparation">
-          {%- if thumb3 != blank -%}
-            <img class="ube-video-tabs__thumb" src="{{ thumb3 }}" alt="">
-          {%- else -%}
-            <div class="ube-video-tabs__thumb--placeholder" aria-hidden="true"></div>
+    {%- if v3_url != blank -%}
+      <button class="ube-video-tabs__item" type="button" data-src="{{ v3_url | escape }}" aria-label="Lire vidéo Préparation">
+        <span class="ube-video-tabs__circle">
+          {%- if p3_url != blank -%}
+            <img src="{{ p3_url }}" alt="" loading="lazy">
           {%- endif -%}
-          <span class="ube-video-tabs__play" aria-hidden="true"></span>
-        </button>
-        <div class="ube-video-tabs__label">Préparation</div>
-      </div>
+          <span class="ube-video-tabs__play" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M10 8.5V15.5L16 12L10 8.5Z" fill="white"/>
+              <circle cx="12" cy="12" r="10" stroke="white" stroke-width="1.5" opacity=".85"/>
+            </svg>
+          </span>
+        </span>
+        <span class="ube-video-tabs__label">Préparation</span>
+      </button>
     {%- endif -%}
 
-    {%- comment -%} 4) Recettes {%- endcomment -%}
-    {%- if v4 != blank -%}
-      {%- liquid
-        assign src4 = v4.value | file_url
-        assign thumb4 = blank
-        if p4 != blank and p4.value != blank
-          assign thumb4 = p4.value | image_url: width: 300
-        elsif v4.value.preview_image != blank
-          assign thumb4 = v4.value.preview_image | image_url: width: 300
-        endif
-      -%}
-      <div class="ube-video-tabs__item">
-        <button class="ube-video-tabs__btn" type="button" data-src="{{ src4 }}" aria-label="Vidéo Recettes">
-          {%- if thumb4 != blank -%}
-            <img class="ube-video-tabs__thumb" src="{{ thumb4 }}" alt="">
-          {%- else -%}
-            <div class="ube-video-tabs__thumb--placeholder" aria-hidden="true"></div>
+    {%- if v4_url != blank -%}
+      <button class="ube-video-tabs__item" type="button" data-src="{{ v4_url | escape }}" aria-label="Lire vidéo Recettes">
+        <span class="ube-video-tabs__circle">
+          {%- if p4_url != blank -%}
+            <img src="{{ p4_url }}" alt="" loading="lazy">
           {%- endif -%}
-          <span class="ube-video-tabs__play" aria-hidden="true"></span>
-        </button>
-        <div class="ube-video-tabs__label">Recettes</div>
-      </div>
+          <span class="ube-video-tabs__play" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M10 8.5V15.5L16 12L10 8.5Z" fill="white"/>
+              <circle cx="12" cy="12" r="10" stroke="white" stroke-width="1.5" opacity=".85"/>
+            </svg>
+          </span>
+        </span>
+        <span class="ube-video-tabs__label">Recettes</span>
+      </button>
     {%- endif -%}
-
   </div>
 
   <div class="ube-video-tabs__modal" hidden>
-    <div class="ube-video-tabs__panel" role="dialog" aria-modal="true" aria-label="Lecture vidéo">
+    <div class="ube-video-tabs__panel" role="dialog" aria-modal="true">
       <button class="ube-video-tabs__close" type="button" aria-label="Fermer">×</button>
-      <video class="ube-video-tabs__player" controls playsinline preload="metadata"></video>
+      <video class="ube-video-tabs__player" controls playsinline></video>
     </div>
   </div>
 </div>
@@ -240,29 +207,61 @@
   var modal = root.querySelector('.ube-video-tabs__modal');
   var player = root.querySelector('.ube-video-tabs__player');
   var closeBtn = root.querySelector('.ube-video-tabs__close');
-  var buttons = root.querySelectorAll('.ube-video-tabs__btn');
+  var buttons = root.querySelectorAll('.ube-video-tabs__item');
 
-  function openWith(src) {
+  function normalizeUrl(src){
+    if (!src) return src;
+    if (src.indexOf('//') === 0) src = window.location.protocol + src;
+    return src;
+  }
+
+  function setVideoSource(src){
+    // enlève les <source> existantes
+    while (player.firstChild) player.removeChild(player.firstChild);
+
+    var s = document.createElement('source');
+    s.src = src;
+    player.appendChild(s);
+  }
+
+  function tryPlay(){
+    var p = player.play();
+    if (p && typeof p.catch === 'function') p.catch(function(){});
+  }
+
+  function openWith(src){
+    src = normalizeUrl(src);
     if (!src) return;
+
     modal.hidden = false;
 
     // reset propre
     player.pause();
     player.removeAttribute('src');
+    while (player.firstChild) player.removeChild(player.firstChild);
     player.load();
 
-    player.src = src;
+    // iOS/Safari
+    player.setAttribute('playsinline', '');
+    player.setAttribute('webkit-playsinline', '');
+
+    setVideoSource(src);
     player.load();
 
-    // Essaye de lancer (sur clic utilisateur ça passe)
-    var p = player.play();
-    if (p && typeof p.catch === 'function') p.catch(function(){});
+    var onMeta = function () {
+      player.removeEventListener('loadedmetadata', onMeta);
+      tryPlay();
+    };
+    player.addEventListener('loadedmetadata', onMeta);
+
+    setTimeout(tryPlay, 250);
   }
 
-  function close() {
+  function close(){
     modal.hidden = true;
     player.pause();
     player.removeAttribute('src');
+    while (player.firstChild) player.removeChild(player.firstChild);
     player.load();
   }
 
@@ -282,3 +281,5 @@
   });
 })();
 </script>
+
+{%- endif -%}
