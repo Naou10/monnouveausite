@@ -67,7 +67,7 @@
       {%- if v1 != blank -%}
         <div class="ube-video-tabs__item">
           <button class="ube-video-tabs__btn" type="button"
-            data-src="{{ v1.value | file_url }}" aria-label="Vidéo bienfaits">
+            data-src="{{ v1.value | url }}" aria-label="Vidéo bienfaits">
             <img class="ube-video-tabs__thumb"
               src="{{ v1.value.preview_image | image_url: width: 240 }}"
               alt="Bienfaits" loading="lazy">
@@ -79,7 +79,7 @@
       {%- if v2 != blank -%}
         <div class="ube-video-tabs__item">
           <button class="ube-video-tabs__btn" type="button"
-            data-src="{{ v2.value | file_url }}" aria-label="Vidéo unboxing">
+            data-src="{{ v2.value | url }}" aria-label="Vidéo unboxing">
             <img class="ube-video-tabs__thumb"
               src="{{ v2.value.preview_image | image_url: width: 240 }}"
               alt="Unboxing" loading="lazy">
@@ -91,7 +91,7 @@
       {%- if v3 != blank -%}
         <div class="ube-video-tabs__item">
           <button class="ube-video-tabs__btn" type="button"
-            data-src="{{ v3.value | file_url }}" aria-label="Vidéo préparation">
+            data-src="{{ v3.value | url }}" aria-label="Vidéo préparation">
             <img class="ube-video-tabs__thumb"
               src="{{ v3.value.preview_image | image_url: width: 240 }}"
               alt="Préparation" loading="lazy">
@@ -103,7 +103,7 @@
       {%- if v4 != blank -%}
         <div class="ube-video-tabs__item">
           <button class="ube-video-tabs__btn" type="button"
-            data-src="{{ v4.value | file_url }}" aria-label="Vidéo recettes">
+            data-src="{{ v4.value | url }}" aria-label="Vidéo recettes">
             <img class="ube-video-tabs__thumb"
               src="{{ v4.value.preview_image | image_url: width: 240 }}"
               alt="Recettes" loading="lazy">
@@ -134,12 +134,18 @@
 
       function openWith(src) {
         if (!src) return;
-        player.pause();
-        player.removeAttribute('src');
-        player.load();
-        player.src = src;
-        modal.hidden = false;
-        try { player.play(); } catch(e) {}
+      player.pause();
+      player.removeAttribute('src');
+      player.load();
+
+      player.src = src;
+      player.load();
+
+      modal.hidden = false;
+      setTimeout(function () {
+      player.play().catch(function(){});
+      }, 0);
+ 
       }
 
       function close() {
