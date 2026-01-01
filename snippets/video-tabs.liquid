@@ -1,342 +1,164 @@
-{%- comment -%}
-  Video Tabs (ronds) - robuste
-  Vidéos (metafields custom):
-  - custom_video_bienfaits
-  - custom_video_unboxing
-  - custom_video_preparation
-  - custom_video_recettes
+{% liquid
+assign p = product
+if p == blank and section.settings.product != blank
+  assign p = section.settings.product
+endif
 
-  Posters (optionnel):
-  - custom_poster_bienfaits
-  - custom_poster_unboxing
-  - custom_poster_preparation :;:;;:;;;:;
-
-
-  ;:;:;:
-  - custom_poster_recettes
-
-  Render:
-  {% render 'video-tabs', product: product, block: block, section: section %}
-{%- endcomment -%}
-
-{%- liquid
-  assign p = product
-  if p == blank and section.settings.product != blank
-    assign p = section.settings.product
-  endif
-
-  assign block_id = block.id | default: 'x'
-  assign uid = 'ube-video-tabs-' | append: section.id | append: '-' | append: block_id
-
-  assign v1_mf = p.metafields.custom.custom_video_bienfaits
-  assign v2_mf = p.metafields.custom.custom_video_unboxing
-  assign v3_mf = p.metafields.custom.custom_video_preparation
-  assign v4_mf = p.metafields.custom.custom_video_recettes
-
-  assign v1 = v1_mf.value
-  assign v2 = v2_mf.value
-  assign v3 = v3_mf.value
-  assign v4 = v4_mf.value
-
-  assign v1_url = v1.url
-  if v1_url == blank and v1.sources != blank
-    assign v1_url = v1.sources[0].url
-  endif
-  if v1_url == blank and v1 != blank
-    assign v1_url = v1 | file_url
-  endif
-
-  assign v2_url = v2.url
-  if v2_url == blank and v2.sources != blank
-    assign v2_url = v2.sources[0].url
-  endif
-  if v2_url == blank and v2 != blank
-    assign v2_url = v2 | file_url
-  endif
-
-  assign v3_url = v3.url
-  if v3_url == blank and v3.sources != blank
-    assign v3_url = v3.sources[0].url
-  endif
-  if v3_url == blank and v3 != blank
-    assign v3_url = v3 | file_url
-  endif
-
-  assign v4_url = v4.url
-  if v4_url == blank and v4.sources != blank
-    assign v4_url = v4.sources[0].url
-  endif
-  if v4_url == blank and v4 != blank
-    assign v4_url = v4 | file_url
-  endif
-
-  assign p1_mf = p.metafields.custom.custom_poster_bienfaits
-  assign p2_mf = p.metafields.custom.custom_poster_unboxing
-  assign p3_mf = p.metafields.custom.custom_poster_preparation
-  assign p4_mf = p.metafields.custom.custom_poster_recettes
-
-  assign poster1 = p1_mf.value
-  assign poster2 = p2_mf.value
-  assign poster3 = p3_mf.value
-  assign poster4 = p4_mf.value
-
-  assign poster1_url = blank
-  if poster1 != blank
-    assign poster1_url = poster1 | image_url: width: 300
-  elsif v1.preview_image != blank
-    assign poster1_url = v1.preview_image | image_url: width: 300
-  endif
-
-  assign poster2_url = blank
-  if poster2 != blank
-    assign poster2_url = poster2 | image_url: width: 300
-  elsif v2.preview_image != blank
-    assign poster2_url = v2.preview_image | image_url: width: 300
-  endif
-
-  assign poster3_url = blank
-  if poster3 != blank
-    assign poster3_url = poster3 | image_url: width: 300
-  elsif v3.preview_image != blank
-    assign poster3_url = v3.preview_image | image_url: width: 300
-  endif
-
-  assign poster4_url = blank
-  if poster4 != blank
-    assign poster4_url = poster4 | image_url: width: 300
-  elsif v4.preview_image != blank
-    assign poster4_url = v4.preview_image | image_url: width: 300
-  endif
-
-  assign has_any = false
-  if v1_url != blank or v2_url != blank or v3_url != blank or v4_url != blank
-    assign has_any = true
-  endif
--%}
-
-{%- if has_any == false -%}
-  {%- if request.design_mode -%}
-    <div style="border:1px dashed #bbb; padding:12px; border-radius:10px; font-size:12px;">
-      Ajoute au moins 1 vidéo dans les métachamps (custom_video_*) pour afficher les ronds.
-    </div>
-  {%- endif -%}
-{%- else -%}
+assign v1 = p.metafields.custom.custom_video_bienfaits.value
+assign v2 = p.metafields.custom.custom_video_unboxing.value
+assign v3 = p.metafields.custom.custom_video_preparation.value
+assign v4 = p.metafields.custom.custom_video_recettes.value
+%}
 
 <style>
-  .ube-video-tabs{ margin-top:12px; }
-  .ube-video-tabs__grid{
-    display:grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4 côte à côte (mobile inclus) */
-    gap:10px;
-    align-items:start;
-  }
-  .ube-video-tabs__item{
-    border:0; background:transparent; padding:0; cursor:pointer;
-    display:flex; flex-direction:column; align-items:center; gap:6px;
-  }
-  .ube-video-tabs__circle{
-    width:64px; height:64px; border-radius:999px;
-    border:2px solid rgba(0,0,0,.15);
-    overflow:hidden; position:relative; background:#f3f3f3;
-  }
-  .ube-video-tabs__circle img{ width:100%; height:100%; display:block; object-fit:cover; }
-  .ube-video-tabs__play{
-    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-    pointer-events:none;
-  }
-  .ube-video-tabs__play svg{ width:18px; height:18px; filter: drop-shadow(0 2px 6px rgba(0,0,0,.35)); }
-  .ube-video-tabs__label{ font-size:12px; line-height:1.1; text-align:center; }
+.ube-video-tabs{
+  display:flex;
+  gap:12px;
+  justify-content:space-between;
+  margin-top:12px;
+}
 
-  @media (min-width: 750px){
-    .ube-video-tabs__circle{ width:72px; height:72px; }
-    .ube-video-tabs__grid{ gap:14px; }
-  }
+.ube-video-tabs__item{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  cursor:pointer;
+}
 
-  .ube-video-tabs__modal{
-    position:fixed; inset:0; background:rgba(0,0,0,.65);
-    display:flex; align-items:center; justify-content:center;
-    padding:18px; z-index:9999;
-  }
-  .ube-video-tabs__modal[hidden]{ display:none; }
-  .ube-video-tabs__panel{
-    width:min(920px, 100%);
-    background:#000; border-radius:16px; overflow:hidden;
-    position:relative;
-  }
-  .ube-video-tabs__close{
-    position:absolute; top:10px; right:10px;
-    width:38px; height:38px; border-radius:999px;
-    border:0; background:rgba(255,255,255,.12); color:#fff;
-    cursor:pointer; font-size:22px; line-height:38px;
-  }
-  .ube-video-tabs__player{
-    width:100%; height:auto; display:block; background:#000;
-  }
-  .ube-video-tabs__error{
-    position:absolute; left:12px; right:12px; bottom:12px;
-    background:rgba(0,0,0,.6); color:#fff; font-size:12px;
-    padding:10px 12px; border-radius:12px;
-  }
-  .ube-video-tabs__error[hidden]{ display:none; }
+.ube-video-tabs__thumb{
+  width:72px;
+  height:72px;
+  border-radius:50%;
+  overflow:hidden;
+  position:relative;
+  border:2px solid rgba(0,0,0,.15);
+}
+
+.ube-video-tabs__thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.ube-video-tabs__play{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,.25);
+}
+
+.ube-video-tabs__play svg{
+  width:30px;
+  height:30px;
+}
+
+.ube-video-tabs__modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.75);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+
+.ube-video-tabs__modal.is-open{
+  display:flex;
+}
+
+.ube-video-tabs__panel{
+  width:90%;
+  max-width:720px;
+  aspect-ratio:16/9;
+  background:#000;
+  position:relative;
+}
+
+.ube-video-tabs__close{
+  position:absolute;
+  top:8px;
+  right:8px;
+  width:36px;
+  height:36px;
+  border:none;
+  background:#fff;
+  border-radius:50%;
+  cursor:pointer;
+  font-size:18px;
+}
+
+.ube-video-tabs__player{
+  width:100%;
+  height:100%;
+}
 </style>
 
-<div class="ube-video-tabs" id="{{ uid }}">
-  <div class="ube-video-tabs__grid" aria-label="Vidéos">
-    {%- if v1_url != blank -%}
-      <button class="ube-video-tabs__item" type="button"
-        data-src="{{ v1_url | escape }}"
-        data-poster="{{ poster1_url | escape }}"
-        aria-label="Lire vidéo Bienfaits">
-        <span class="ube-video-tabs__circle">
-          {%- if poster1_url != blank -%}<img src="{{ poster1_url }}" alt="" loading="lazy">{%- endif -%}
-          <span class="ube-video-tabs__play" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M10 8.5V15.5L16 12L10 8.5Z" fill="white"/>
-              <circle cx="12" cy="12" r="10" stroke="white" stroke-width="1.5" opacity=".85"/>
-            </svg>
-          </span>
-        </span>
-        <span class="ube-video-tabs__label">Bienfaits</span>
-      </button>
-    {%- endif -%}
+<div class="ube-video-tabs" id="ube-video-tabs">
+  {% for v in (1..4) %}
+    {% assign video = nil %}
+    {% if v == 1 %}{% assign video = v1 %}{% endif %}
+    {% if v == 2 %}{% assign video = v2 %}{% endif %}
+    {% if v == 3 %}{% assign video = v3 %}{% endif %}
+    {% if v == 4 %}{% assign video = v4 %}{% endif %}
 
-    {%- if v2_url != blank -%}
-      <button class="ube-video-tabs__item" type="button"
-        data-src="{{ v2_url | escape }}"
-        data-poster="{{ poster2_url | escape }}"
-        aria-label="Lire vidéo Unboxing">
-        <span class="ube-video-tabs__circle">
-          {%- if poster2_url != blank -%}<img src="{{ poster2_url }}" alt="" loading="lazy">{%- endif -%}
-          <span class="ube-video-tabs__play" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M10 8.5V15.5L16 12L10 8.5Z" fill="white"/>
-              <circle cx="12" cy="12" r="10" stroke="white" stroke-width="1.5" opacity=".85"/>
+    {% if video != blank %}
+      <div class="ube-video-tabs__item" data-video='{{ video | json }}'>
+        <div class="ube-video-tabs__thumb">
+          <img src="{{ video.preview_image | image_url: width: 300 }}" alt="">
+          <div class="ube-video-tabs__play">
+            <svg viewBox="0 0 64 64">
+              <circle cx="32" cy="32" r="24" fill="rgba(255,255,255,.9)"/>
+              <path d="M28 22v20l16-10-16-10z" fill="#000"/>
             </svg>
-          </span>
-        </span>
-        <span class="ube-video-tabs__label">Unboxing</span>
-      </button>
-    {%- endif -%}
-
-    {%- if v3_url != blank -%}
-      <button class="ube-video-tabs__item" type="button"
-        data-src="{{ v3_url | escape }}"
-        data-poster="{{ poster3_url | escape }}"
-        aria-label="Lire vidéo Préparation">
-        <span class="ube-video-tabs__circle">
-          {%- if poster3_url != blank -%}<img src="{{ poster3_url }}" alt="" loading="lazy">{%- endif -%}
-          <span class="ube-video-tabs__play" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M10 8.5V15.5L16 12L10 8.5Z" fill="white"/>
-              <circle cx="12" cy="12" r="10" stroke="white" stroke-width="1.5" opacity=".85"/>
-            </svg>
-          </span>
-        </span>
-        <span class="ube-video-tabs__label">Préparation</span>
-      </button>
-    {%- endif -%}
-
-    {%- if v4_url != blank -%}
-      <button class="ube-video-tabs__item" type="button"
-        data-src="{{ v4_url | escape }}"
-        data-poster="{{ poster4_url | escape }}"
-        aria-label="Lire vidéo Recettes">
-        <span class="ube-video-tabs__circle">
-          {%- if poster4_url != blank -%}<img src="{{ poster4_url }}" alt="" loading="lazy">{%- endif -%}
-          <span class="ube-video-tabs__play" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M10 8.5V15.5L16 12L10 8.5Z" fill="white"/>
-              <circle cx="12" cy="12" r="10" stroke="white" stroke-width="1.5" opacity=".85"/>
-            </svg>
-          </span>
-        </span>
-        <span class="ube-video-tabs__label">Recettes</span>
-      </button>
-    {%- endif -%}
-  </div>
-
-  <div class="ube-video-tabs__modal" hidden>
-    <div class="ube-video-tabs__panel" role="dialog" aria-modal="true">
-      <button class="ube-video-tabs__close" type="button" aria-label="Fermer">×</button>
-      <video class="ube-video-tabs__player" controls playsinline preload="metadata"></video>
-      <div class="ube-video-tabs__error" hidden>
-        La vidéo ne se charge pas. Vérifie le format : MP4 (H.264 + AAC) recommandé.
+          </div>
+        </div>
       </div>
-    </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<div class="ube-video-tabs__modal" id="ube-video-modal">
+  <div class="ube-video-tabs__panel">
+    <button class="ube-video-tabs__close" type="button">✕</button>
+    <video class="ube-video-tabs__player" controls playsinline></video>
   </div>
 </div>
 
 <script>
-(function () {
-  var root = document.getElementById({{ uid | json }});
-  if (!root) return;
+(function(){
+  const root = document.getElementById('ube-video-tabs');
+  if(!root) return;
 
-  var modal = root.querySelector('.ube-video-tabs__modal');
-  var player = root.querySelector('.ube-video-tabs__player');
-  var closeBtn = root.querySelector('.ube-video-tabs__close');
-  var buttons = root.querySelectorAll('.ube-video-tabs__item');
-  var errorBox = root.querySelector('.ube-video-tabs__error');
+  const modal = document.getElementById('ube-video-modal');
+  const player = modal.querySelector('video');
+  const closeBtn = modal.querySelector('.ube-video-tabs__close');
 
-  function normalizeUrl(src){
-    if (!src) return src;
-    if (src.indexOf('//') === 0) src = window.location.protocol + src;
-    return src;
-  }
+  root.querySelectorAll('.ube-video-tabs__item').forEach(item=>{
+    item.addEventListener('click',()=>{
+      const video = JSON.parse(item.dataset.video);
+      if(!video || !video.sources || !video.sources[0]) return;
 
-  function openWith(src, poster){
-    src = normalizeUrl(src);
-    if (!src) return;
-
-    errorBox.hidden = true;
-    modal.hidden = false;
-
-    // reset propre
-    try { player.pause(); } catch(e){}
-    player.removeAttribute('src');
-    player.load();
-
-    // poster
-    if (poster) player.setAttribute('poster', poster);
-
-    // iOS inline
-    player.setAttribute('playsinline', '');
-    player.setAttribute('webkit-playsinline', '');
-
-    // set src direct (plus fiable que <source>)
-    player.src = src;
-    player.load();
-
-    // tente play (si bloqué, l’utilisateur peut cliquer ▶)
-    var p = player.play();
-    if (p && typeof p.catch === 'function') p.catch(function(){});
-  }
-
-  function close(){
-    modal.hidden = true;
-    errorBox.hidden = true;
-    try { player.pause(); } catch(e){}
-    player.removeAttribute('src');
-    player.load();
-  }
-
-  player.addEventListener('error', function(){
-    errorBox.hidden = false;
-  });
-
-  buttons.forEach(function(btn){
-    btn.addEventListener('click', function(){
-      openWith(btn.getAttribute('data-src'), btn.getAttribute('data-poster'));
+      player.src = video.sources[0].url;
+      player.load();
+      modal.classList.add('is-open');
+      player.play().catch(()=>{});
     });
   });
 
-  closeBtn.addEventListener('click', close);
-  modal.addEventListener('click', function(e){
-    if (e.target === modal) close();
+  closeBtn.addEventListener('click',()=>{
+    modal.classList.remove('is-open');
+    player.pause();
+    player.src='';
   });
-  document.addEventListener('keydown', function(e){
-    if (!modal.hidden && e.key === 'Escape') close();
+
+  modal.addEventListener('click',(e)=>{
+    if(e.target === modal){
+      modal.classList.remove('is-open');
+      player.pause();
+      player.src='';
+    }
   });
 })();
 </script>
-
-{%- endif -%}
