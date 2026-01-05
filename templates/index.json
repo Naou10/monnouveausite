@@ -364,9 +364,9 @@
         "image_AfbGEP": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Bonne_resolutions_2.png",
+            "image": "shopify://shop_images/BONNES_1.jpg",
             "alignment": "center",
-            "max_width": 470
+            "max_width": 460
           }
         },
         "rating_LPhX9k": {
@@ -405,7 +405,7 @@
         "image_mx4qLH": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/7_clients_sur_10_ajoutent_le_fouet_electrique_et_le_bol_a_leur_cure_UBEYA_1.jpg",
+            "image": "shopify://shop_images/UBELA_3.jpg",
             "alignment": "start",
             "max_width": 500
           }
@@ -420,6 +420,10 @@
             "payment_button_background": "#ffffff",
             "payment_button_text_color": "#f0c417"
           }
+        },
+        "video_tabs_P8chHd": {
+          "type": "video_tabs",
+          "settings": {}
         },
         "liquid_6dAzBW": {
           "type": "liquid",
@@ -455,6 +459,7 @@
         "quantity_selector_4DUrdr",
         "image_mx4qLH",
         "buy_buttons_M9Mj6j",
+        "video_tabs_P8chHd",
         "liquid_6dAzBW",
         "pickup_availability_Gn6Cir",
         "image_gkkr4z"
