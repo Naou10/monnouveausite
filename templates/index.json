@@ -669,7 +669,7 @@
           "type": "item",
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_Jan_14_2026_05_56_17_PM.png",
-            "image_rotation_degrees": -2,
+            "image_rotation_degrees": 0,
             "subheading": "",
             "title": "Une énergie stable retrouvée",
             "content": "",
@@ -683,8 +683,8 @@
             "image": "shopify://shop_images/ChatGPT_Image_Jan_14_2026_05_46_23_PM.png",
             "image_rotation_degrees": 1.5,
             "subheading": "",
-            "title": "Heading 2",
-            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "title": "Une meilleure digestion garantie",
+            "content": "",
             "button_url": "",
             "button_text": ""
           }
