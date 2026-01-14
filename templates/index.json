@@ -489,10 +489,11 @@
         "item_pQUtFR": {
           "type": "item",
           "settings": {
-            "column_size": "3",
-            "title": "Column title",
-            "heading_tag": "h4",
-            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "image": "shopify://shop_images/UPC11111.jpg",
+            "column_size": "2",
+            "title": "",
+            "heading_tag": "h1",
+            "content": "",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -501,22 +502,11 @@
         "item_rheHji": {
           "type": "item",
           "settings": {
-            "column_size": "3",
-            "title": "Column title",
+            "image": "shopify://shop_images/UPC222222.jpg",
+            "column_size": "2",
+            "title": "",
             "heading_tag": "h4",
-            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "link_url": "",
-            "link_text": "",
-            "link_style": "link"
-          }
-        },
-        "item_dwAh6k": {
-          "type": "item",
-          "settings": {
-            "column_size": "3",
-            "title": "Column title",
-            "heading_tag": "h4",
-            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "content": "",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -525,8 +515,7 @@
       },
       "block_order": [
         "item_pQUtFR",
-        "item_rheHji",
-        "item_dwAh6k"
+        "item_rheHji"
       ],
       "name": "Multi-column",
       "settings": {
