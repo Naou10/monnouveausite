@@ -483,6 +483,65 @@
         "input_text_color": ""
       }
     },
+    "multi_column_MGqrhN": {
+      "type": "multi-column",
+      "blocks": {
+        "item_pQUtFR": {
+          "type": "item",
+          "settings": {
+            "column_size": "3",
+            "title": "Column title",
+            "heading_tag": "h4",
+            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "item_rheHji": {
+          "type": "item",
+          "settings": {
+            "column_size": "3",
+            "title": "Column title",
+            "heading_tag": "h4",
+            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "item_dwAh6k": {
+          "type": "item",
+          "settings": {
+            "column_size": "3",
+            "title": "Column title",
+            "heading_tag": "h4",
+            "content": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        }
+      },
+      "block_order": [
+        "item_pQUtFR",
+        "item_rheHji",
+        "item_dwAh6k"
+      ],
+      "name": "Multi-column",
+      "settings": {
+        "full_width": true,
+        "stack_on_mobile": false,
+        "gap": "x-large",
+        "text_alignment": "start",
+        "subheading": "About",
+        "title": "L’or violet venu tout droit des Philippines 🇵🇭",
+        "content": "<h5>Originaire des Philippines, l’UBE séduit par sa <strong>couleur violette intense</strong>, son <strong>goût naturellement sucré</strong> aux notes de vanille et de noisette, et ses <strong>bienfaits naturels</strong>.<br/><br/>Sélectionnée avec soin par <strong>UBELA</strong>, elle s’intègre parfaitement à un quotidien équilibré, pour un moment aussi gourmand que réconfortant.</h5>",
+        "background": "#2e1760",
+        "background_gradient": "",
+        "text_color": "#ffffff"
+      }
+    },
     "accordion_content_gpELng": {
       "type": "accordion-content",
       "blocks": {
@@ -615,6 +674,7 @@
     "rich_text_tfzmWg",
     "before_after_image_Xpt67W",
     "featured_product_UAfRCT",
+    "multi_column_MGqrhN",
     "accordion_content_gpELng",
     "rich_text_dTXRPL",
     "image_with_text_overlay_AexhXk",
