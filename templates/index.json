@@ -519,10 +519,10 @@
       ],
       "name": "Multi-column",
       "settings": {
-        "full_width": true,
-        "stack_on_mobile": false,
+        "full_width": false,
+        "stack_on_mobile": true,
         "gap": "x-large",
-        "text_alignment": "start",
+        "text_alignment": "center",
         "subheading": "About",
         "title": "L’or violet venu tout droit des Philippines 🇵🇭",
         "content": "<h5>Originaire des Philippines, l’UBE séduit par sa <strong>couleur violette intense</strong>, son <strong>goût naturellement sucré</strong> aux notes de vanille et de noisette, et ses <strong>bienfaits naturels</strong>.<br/><br/>Sélectionnée avec soin par <strong>UBELA</strong>, elle s’intègre parfaitement à un quotidien équilibré, pour un moment aussi gourmand que réconfortant.</h5>",
@@ -649,6 +649,63 @@
         "overlay_color": "#000000",
         "overlay_opacity": 0
       }
+    },
+    "multiple_images_with_text_9tWDWk": {
+      "type": "multiple-images-with-text",
+      "blocks": {
+        "item_xheyg4": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_Jan_14_2026_05_41_21_PM.png",
+            "image_rotation_degrees": 0,
+            "subheading": "",
+            "title": "Peau plus fraîche",
+            "content": "",
+            "button_url": "",
+            "button_text": ""
+          }
+        },
+        "item_rERRnn": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_Jan_14_2026_05_56_17_PM.png",
+            "image_rotation_degrees": -2,
+            "subheading": "",
+            "title": "Heading 1",
+            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "button_url": "",
+            "button_text": ""
+          }
+        },
+        "item_kPJQ6f": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_Jan_14_2026_05_46_23_PM.png",
+            "image_rotation_degrees": 1.5,
+            "subheading": "",
+            "title": "Heading 2",
+            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "button_url": "",
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_xheyg4",
+        "item_rERRnn",
+        "item_kPJQ6f"
+      ],
+      "name": "Multiple images with text",
+      "settings": {
+        "full_width": true,
+        "images_layout": "stacked",
+        "collage_images_alignment": "top",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "button_background": "",
+        "button_text_color": ""
+      }
     }
   },
   "order": [
@@ -667,6 +724,7 @@
     "accordion_content_gpELng",
     "rich_text_dTXRPL",
     "image_with_text_overlay_AexhXk",
-    "image_with_text_overlay_7Y3ENx"
+    "image_with_text_overlay_7Y3ENx",
+    "multiple_images_with_text_9tWDWk"
   ]
 }
