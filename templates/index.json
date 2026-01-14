@@ -659,7 +659,7 @@
             "image": "shopify://shop_images/ChatGPT_Image_Jan_14_2026_05_41_21_PM.png",
             "image_rotation_degrees": 0,
             "subheading": "",
-            "title": "Peau plus fraîche",
+            "title": "Une peau bien plus fraîche",
             "content": "",
             "button_url": "",
             "button_text": ""
@@ -681,7 +681,7 @@
           "type": "item",
           "settings": {
             "image": "shopify://shop_images/ChatGPT_Image_Jan_14_2026_05_46_23_PM.png",
-            "image_rotation_degrees": 1.5,
+            "image_rotation_degrees": 0,
             "subheading": "",
             "title": "Une meilleure digestion garantie",
             "content": "",
