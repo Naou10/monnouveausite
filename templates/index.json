@@ -361,6 +361,12 @@
             "liquid": "<div class=\"jp-stock-wrap\" role=\"status\" aria-live=\"polite\">\n  <span class=\"jp-dot\" aria-hidden=\"true\"></span>\n  <span class=\"jp-stock-text\">Stock limitée: <strong>6</strong> restants</span>\n</div>\n\n<style>\n  .jp-stock-wrap{\n    display: inline-flex;\n    align-items: center;\n    gap: 8px;\n    color: #d10000;\n    font-weight: 700;\n    font-size: 14px;\n    margin: 0;\n  }\n\n  .jp-dot{\n    width: 9px;\n    height: 9px;\n    border-radius: 50%;\n    background: #d10000;\n    display: inline-block;\n    animation: jp-blink 1s infinite;\n  }\n\n  @keyframes jp-blink{\n    0%, 100% { opacity: 1; }\n    50%      { opacity: 0.15; }\n  }\n</style>"
           }
         },
+        "rapi_bundles_rapi_bundle_LCUdiC": {
+          "type": "shopify://apps/rapi-bundles/blocks/rapi-bundle/99617c17-a32b-4e70-a883-7a155610d032",
+          "settings": {
+            "product": "cure-ube"
+          }
+        },
         "image_AfbGEP": {
           "type": "image",
           "settings": {
@@ -451,6 +457,7 @@
         "badges_Yf9Gfi",
         "price_GcdNyC",
         "liquid_hJpCLe",
+        "rapi_bundles_rapi_bundle_LCUdiC",
         "image_AfbGEP",
         "rating_LPhX9k",
         "separator_9V4q67",
