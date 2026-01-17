@@ -24,7 +24,7 @@
             "icon_background": "",
             "icon_color": "",
             "title": "Livraison offerte",
-            "content": "<p><strong>Livraison rapide en France 🇫🇷</strong><br/><br/>Expédition sous 24/48h. Suivi fourni dès l’envoi.</p>"
+            "content": "<p><strong>Livraison rapide en  🇫🇷 </strong>🇧🇪 🇱🇺🇨🇭<br/><br/>Expédition sous 24/48h. Suivi fourni dès l’envoi.</p>"
           }
         },
         "customer-support": {
@@ -79,7 +79,7 @@
           "settings": {
             "image_width": 150,
             "heading_size": "h3",
-            "title": "Sign up for new stories and personal offers",
+            "title": "Inscrivez-vous pour recevoir nos offres et actualités",
             "content": ""
           }
         },
@@ -88,14 +88,14 @@
           "settings": {
             "menu": "footer",
             "show_menu_title": true,
-            "menu_title": ""
+            "menu_title": "<strong>Liens utiles</strong>"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "title": "About",
-            "content": "<p>Use this text area to tell your customers about your brand and vision. You can change it in the theme editor.</p>",
+            "title": "Contactez-nous",
+            "content": "<p>Service Clients : contact.ubela@gmail.com</p><p>Horaires : Lundi - Vendredi, 9h00 - 12h00 et 14h00 - 18h00 / Samedi et Dimanche, 10h00 - 12h00</p>",
             "enable_follow_on_shop": true
           }
         }
