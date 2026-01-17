@@ -375,12 +375,6 @@
             "product": "cure-ube"
           }
         },
-        "rating_LPhX9k": {
-          "type": "rating",
-          "settings": {
-            "show_empty": false
-          }
-        },
         "separator_9V4q67": {
           "type": "separator",
           "settings": {}
@@ -459,7 +453,6 @@
         "liquid_hJpCLe",
         "image_AfbGEP",
         "rapi_bundles_rapi_bundle_LCUdiC",
-        "rating_LPhX9k",
         "separator_9V4q67",
         "description_iMTUEk",
         "variant_picker_heCNbA",
