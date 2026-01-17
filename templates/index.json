@@ -720,15 +720,15 @@
         "item_KXrWWA": {
           "type": "item",
           "settings": {
-            "title": "How long will it take to get my orders?",
-            "content": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+            "title": "Quel est le goût de l’UBE ?",
+            "content": "<p>C’est un goût <strong>doux et réconfortant</strong>, souvent décrit comme <strong>vanille/noisette</strong>, très agréable en latte et en desserts..</p>"
           }
         },
         "item_HBtdjC": {
           "type": "item",
           "settings": {
-            "title": "Any question?",
-            "content": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+            "title": "Est-ce 100% naturel ?",
+            "content": "<p>ui. Notre UBE est <strong>100% naturel</strong>, <strong>récolté directement à la source</strong>. La recette est <strong>sans additifs</strong> : <strong>aucun colorant, aucun conservateur, aucun arôme artificiel</strong>.</p>"
           }
         }
       },
