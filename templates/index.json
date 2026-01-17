@@ -840,6 +840,32 @@
         "accordion_text_color": ""
       }
     },
+    "rich_text_x9jAWY": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_QcQVUL": {
+          "type": "heading",
+          "settings": {
+            "text": "Vous aimerez aussi",
+            "heading_tag": "h2",
+            "text_color": "#2e1760",
+            "gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_QcQVUL"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
     "17685816424432d622": {
       "type": "apps",
       "blocks": {
@@ -888,6 +914,7 @@
     "image_with_text_overlay_7Y3ENx",
     "multiple_images_with_text_9tWDWk",
     "faq_jHyTk9",
+    "rich_text_x9jAWY",
     "17685816424432d622"
   ]
 }
