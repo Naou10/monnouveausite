@@ -707,6 +707,59 @@
         "button_text_color": ""
       }
     },
+    "faq_jHyTk9": {
+      "type": "faq",
+      "blocks": {
+        "item_eC8QMQ": {
+          "type": "item",
+          "settings": {
+            "title": "Qu’est-ce que l’UBE ?",
+            "content": "<p>L’UBE est une <strong>igname violette</strong> (souvent appelée “purple yam”) connue pour sa <strong>couleur violette naturelle</strong> et son goût doux, légèrement <strong>vanillé</strong> avec une touche <strong>gourmande</strong>.</p>"
+          }
+        },
+        "item_KXrWWA": {
+          "type": "item",
+          "settings": {
+            "title": "How long will it take to get my orders?",
+            "content": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+          }
+        },
+        "item_HBtdjC": {
+          "type": "item",
+          "settings": {
+            "title": "Any question?",
+            "content": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_eC8QMQ",
+        "item_KXrWWA",
+        "item_HBtdjC"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "full_width": true,
+        "subheading": "",
+        "title": "FAQ",
+        "content": "<p>Use this text to share information about your product or shipping policies.</p>",
+        "team_avatar_width": 160,
+        "support_hours": "Our customer support is available Monday to Friday: 8am-8:30pm.",
+        "answer_time": "Average answer time: 24h",
+        "button_text": "",
+        "button_url": "",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "button_background": "",
+        "button_text_color": "",
+        "accordion_background": "",
+        "accordion_text_color": ""
+      }
+    },
     "17685816424432d622": {
       "type": "apps",
       "blocks": {
@@ -754,6 +807,7 @@
     "image_with_text_overlay_AexhXk",
     "image_with_text_overlay_7Y3ENx",
     "multiple_images_with_text_9tWDWk",
+    "faq_jHyTk9",
     "17685816424432d622"
   ]
 }
