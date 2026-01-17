@@ -596,7 +596,7 @@
         "heading_FyLzYi": {
           "type": "heading",
           "settings": {
-            "text": "Comment préparer et déguster votre Ube Latte ?",
+            "text": "Comment préparer et déguster votre Ube Latte Maison ?",
             "heading_tag": "h2",
             "text_color": "",
             "gradient": ""
@@ -616,21 +616,66 @@
         "text_color": ""
       }
     },
-    "image_with_text_overlay_AexhXk": {
-      "type": "image-with-text-overlay",
-      "name": "Image with text overlay",
+    "multi_column_ezz479": {
+      "type": "multi-column",
+      "blocks": {
+        "item_DyQqWG": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Capture_d_ecran_2026-01-17_a_23.30.36.png",
+            "column_size": "3",
+            "title": "Etape 1",
+            "heading_tag": "h4",
+            "content": "<p>Ajouter 1 à 2 c/s d'ube dans 6 cl de lait chaud<br/>pour faire une pâte bien lisse.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "item_RYnGcE": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Capture_d_ecran_2026-01-17_a_23.31.02.png",
+            "column_size": "3",
+            "title": "Etape 2",
+            "heading_tag": "h4",
+            "content": "<p>Remplis un verre de glaçons et ajoutez le lait froid.</p>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        },
+        "item_UgnJRt": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Capture_d_ecran_2026-01-17_a_23.31.14.png",
+            "column_size": "3",
+            "title": "Etape 3",
+            "heading_tag": "h4",
+            "content": "<p>Versez doucement le mélange d’ube (et le café si vous voulez).</p><ul><li>Bien mélanger et déguster !</li></ul>",
+            "link_url": "",
+            "link_text": "",
+            "link_style": "link"
+          }
+        }
+      },
+      "block_order": [
+        "item_DyQqWG",
+        "item_RYnGcE",
+        "item_UgnJRt"
+      ],
+      "name": "Multi-column",
       "settings": {
         "full_width": true,
-        "allow_transparent_header": false,
-        "enable_parallax": false,
-        "image_size": "auto",
-        "image": "shopify://shop_images/UBE.png",
-        "mobile_image": "shopify://shop_images/UBE.png",
-        "mobile_text_position": "place-self-center text-center",
-        "desktop_text_position": "sm:place-self-center sm:text-center",
-        "text_color": "#ffffff",
-        "overlay_color": "#000000",
-        "overlay_opacity": 0
+        "stack_on_mobile": false,
+        "gap": "medium",
+        "text_alignment": "start",
+        "subheading": "",
+        "title": "",
+        "content": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
       }
     },
     "image_with_text_overlay_7Y3ENx": {
@@ -823,7 +868,7 @@
         "item_XQ3MiD": {
           "type": "item",
           "settings": {
-            "title": "Pourquoi utiliser le fouet électrique / Fouet bambou / Bol UBELA ?",
+            "title": "Pourquoi utiliser le fouet électrique / fouet bambou / bol UBELA ?",
             "content": "<p><strong>Fouet électrique</strong> : ultra rapide, texture lisse en quelques secondes.</p><p><br/><strong>Fouet bambou</strong> : geste “rituel”, parfait pour une préparation douce.<br/></p><p><br/><strong>Bol en céramique UBELA</strong> : idéal pour mélanger proprement et rendre la routine plus agréable.</p>"
           }
         }
@@ -848,10 +893,10 @@
         "full_width": true,
         "subheading": "",
         "title": "FAQ",
-        "content": "",
+        "content": "<p>Use this text to share information about your product or shipping policies.</p>",
         "team_avatar_width": 160,
-        "support_hours": "",
-        "answer_time": "",
+        "support_hours": "Our customer support is available Monday to Friday: 8am-8:30pm.",
+        "answer_time": "Average answer time: 24h",
         "button_text": "",
         "button_url": "",
         "text_position": "center",
@@ -910,7 +955,7 @@
     "multi_column_MGqrhN",
     "accordion_content_gpELng",
     "rich_text_dTXRPL",
-    "image_with_text_overlay_AexhXk",
+    "multi_column_ezz479",
     "image_with_text_overlay_7Y3ENx",
     "multiple_images_with_text_9tWDWk",
     "featured_collection_n6GpMz",
