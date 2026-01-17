@@ -624,8 +624,8 @@
         "allow_transparent_header": false,
         "enable_parallax": false,
         "image_size": "auto",
-        "image": "shopify://shop_images/UBE.png",
-        "mobile_image": "shopify://shop_images/UBE.png",
+        "image": "shopify://shop_images/1._3.png",
+        "mobile_image": "shopify://shop_images/1._3.png",
         "mobile_text_position": "place-self-center text-center",
         "desktop_text_position": "sm:place-self-center sm:text-center",
         "text_color": "#ffffff",
@@ -840,6 +840,32 @@
         "accordion_text_color": ""
       }
     },
+    "rich_text_x9jAWY": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_QcQVUL": {
+          "type": "heading",
+          "settings": {
+            "text": "Vous aimerez aussi",
+            "heading_tag": "h2",
+            "text_color": "#2e1760",
+            "gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_QcQVUL"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "full_width": true,
+        "content_width": "small",
+        "text_position": "center",
+        "background": "",
+        "background_gradient": "",
+        "text_color": ""
+      }
+    },
     "17685816424432d622": {
       "type": "apps",
       "blocks": {
@@ -867,6 +893,32 @@
         "background_gradient": "",
         "text_color": ""
       }
+    },
+    "featured_collection_n6GpMz": {
+      "type": "featured-collection",
+      "name": "Featured collection",
+      "settings": {
+        "collection": "accessoires",
+        "products": [],
+        "full_width": true,
+        "stack_products": false,
+        "show_progress_bar": true,
+        "products_count": 14,
+        "products_per_row_mobile": "1",
+        "products_per_row_desktop": 3,
+        "subheading": "",
+        "title": "Vous aimerez aussi",
+        "content": "",
+        "link_url": "",
+        "link_text": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "product_card_background": "",
+        "product_card_text_color": ""
+      }
     }
   },
   "order": [
@@ -888,6 +940,8 @@
     "image_with_text_overlay_7Y3ENx",
     "multiple_images_with_text_9tWDWk",
     "faq_jHyTk9",
-    "17685816424432d622"
+    "rich_text_x9jAWY",
+    "17685816424432d622",
+    "featured_collection_n6GpMz"
   ]
 }
