@@ -730,12 +730,92 @@
             "title": "Est-ce 100% naturel ?",
             "content": "<p>ui. Notre UBE est <strong>100% naturel</strong>, <strong>récolté directement à la source</strong>. La recette est <strong>sans additifs</strong> : <strong>aucun colorant, aucun conservateur, aucun arôme artificiel</strong>.</p>"
           }
+        },
+        "item_cDAQK9": {
+          "type": "item",
+          "settings": {
+            "title": "Votre UBE contient-il des vitamines ?",
+            "content": "<p>Oui. L’UBE est naturellement <strong>riche en vitamines</strong>, notamment en <strong>vitamines A et C</strong>, ce qui en fait une boisson idéale pour soutenir ton énergie et ta routine bien-être au quotidien</p>"
+          }
+        },
+        "item_HDnN4x": {
+          "type": "item",
+          "settings": {
+            "title": "Peut-on le boire chaud et froid ?",
+            "content": "<p>Oui !</p><ul><li><strong>Chaud</strong> : type latte réconfortant.<br/></li><li><strong>Froid</strong> : sur glaçons, style iced latte (super Instagramable).</li></ul>"
+          }
+        },
+        "item_gDfMdP": {
+          "type": "item",
+          "settings": {
+            "title": "Est-ce compatible avec une alimentation VEGAN ?",
+            "content": "<p>Oui, totalement. Notre UBE est <strong>100% compatible avec une alimentation VEGAN</strong>. Tu peux le préparer avec la boisson végétale de ton choix (avoine, amande, soja, etc.).</p>"
+          }
+        },
+        "item_HqGQ7j": {
+          "type": "item",
+          "settings": {
+            "title": "Peut-on l’utiliser en pâtisserie ?",
+            "content": "<p>Oui ! Tu peux l’utiliser pour ajouter <strong>goût + couleur violette</strong> dans des pancakes, gâteaux, cookies, crèmes, glaçages, cheesecake, etc.<br/><br/>Astuce : commence par une petite dose, puis ajuste pour obtenir la teinte et le goût désirés.</p>"
+          }
+        },
+        "item_bqYib8": {
+          "type": "item",
+          "settings": {
+            "title": "Combien de temps se conserve le paquet après ouverture ?",
+            "content": "<p>Nous recommandons de consommer le produit <strong>dans les 24 mois après ouverture</strong>. Pour une conservation optimale, referme bien le sachet et garde-le <strong>au sec</strong>, à l’abri de la chaleur et de l’humidité.</p>"
+          }
+        },
+        "item_LWWaX3": {
+          "type": "item",
+          "settings": {
+            "title": "Peut-on consommer enceinte ou allaitante ?",
+            "content": "<p>Par précaution, on recommande de <strong>demander l’avis de ton médecin/sage-femme</strong> (chaque grossesse est différente).</p>"
+          }
+        },
+        "item_gkQV4h": {
+          "type": "item",
+          "settings": {
+            "title": "Est-ce adapté aux enfants ?",
+            "content": "<p>En effet, c'est adapté et superbe alternative  aux boissons sucrées. Néanmoins, on conseille de rester prudent et de demander l’avis d’un professionnel de santé ( surtout si votre enfant a des problèmes de diabète) </p>"
+          }
+        },
+        "item_Gf36kz": {
+          "type": "item",
+          "settings": {
+            "title": "Est-ce que ça remplace le café ?",
+            "content": "<p>Oui, tout à fait. L’UBE peut <strong>très bien remplacer le café</strong> : c’est une alternative plus douce, idéale si tu veux garder un bon niveau d’énergie au quotidien <strong>sans les effets “coup de mou”</strong> que certains ressentent après le café.</p>"
+          }
+        },
+        "item_NLeBqh": {
+          "type": "item",
+          "settings": {
+            "title": "Avec quel lait c’est le meilleur ?",
+            "content": "<p>rès bon avec :</p><ul><li><strong>avoine</strong> (ultra crémeux),<br/></li><li><strong>amande</strong> (léger),<br/></li><li><strong>soja</strong> (riche),<br/></li><li>ou <strong>lait classique</strong> si tu préfères.</li></ul>"
+          }
+        },
+        "item_XQ3MiD": {
+          "type": "item",
+          "settings": {
+            "title": "Pourquoi utiliser le fouet électrique / fouet bambou / bol UBELA ?",
+            "content": "<p><strong>Fouet électrique</strong> : ultra rapide, texture lisse en quelques secondes.</p><p><br/><strong>Fouet bambou</strong> : geste “rituel”, parfait pour une préparation douce.<br/></p><p><br/><strong>Bol en céramique UBELA</strong> : idéal pour mélanger proprement et rendre la routine plus agréable.</p>"
+          }
         }
       },
       "block_order": [
         "item_eC8QMQ",
         "item_KXrWWA",
-        "item_HBtdjC"
+        "item_HBtdjC",
+        "item_cDAQK9",
+        "item_HDnN4x",
+        "item_gDfMdP",
+        "item_HqGQ7j",
+        "item_bqYib8",
+        "item_LWWaX3",
+        "item_gkQV4h",
+        "item_Gf36kz",
+        "item_NLeBqh",
+        "item_XQ3MiD"
       ],
       "name": "FAQ",
       "settings": {
