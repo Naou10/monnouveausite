@@ -823,7 +823,7 @@
         "item_XQ3MiD": {
           "type": "item",
           "settings": {
-            "title": "Pourquoi utiliser le fouet électrique / fouet bambou / bol UBELA ?",
+            "title": "Pourquoi utiliser le fouet électrique / Fouet bambou / Bol UBELA ?",
             "content": "<p><strong>Fouet électrique</strong> : ultra rapide, texture lisse en quelques secondes.</p><p><br/><strong>Fouet bambou</strong> : geste “rituel”, parfait pour une préparation douce.<br/></p><p><br/><strong>Bol en céramique UBELA</strong> : idéal pour mélanger proprement et rendre la routine plus agréable.</p>"
           }
         }
@@ -850,8 +850,8 @@
         "title": "FAQ",
         "content": "",
         "team_avatar_width": 160,
-        "support_hours": "Our customer support is available Monday to Friday: 8am-8:30pm.",
-        "answer_time": "Average answer time: 24h",
+        "support_hours": "",
+        "answer_time": "",
         "button_text": "",
         "button_url": "",
         "text_position": "center",
