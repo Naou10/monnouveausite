@@ -349,12 +349,6 @@
           "type": "badges",
           "settings": {}
         },
-        "price_GcdNyC": {
-          "type": "price",
-          "settings": {
-            "show_taxes_notice": false
-          }
-        },
         "liquid_hJpCLe": {
           "type": "liquid",
           "settings": {
@@ -398,18 +392,6 @@
             "size_chart_page": ""
           }
         },
-        "quantity_selector_4DUrdr": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
-        "image_mx4qLH": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/UBELA_3.jpg",
-            "alignment": "start",
-            "max_width": 500
-          }
-        },
         "buy_buttons_M9Mj6j": {
           "type": "buy_buttons",
           "settings": {
@@ -449,15 +431,12 @@
         "title_G8HWTi",
         "vendor_8RyVf9",
         "badges_Yf9Gfi",
-        "price_GcdNyC",
         "liquid_hJpCLe",
         "image_AfbGEP",
         "rapi_bundles_rapi_bundle_LCUdiC",
         "separator_9V4q67",
         "description_iMTUEk",
         "variant_picker_heCNbA",
-        "quantity_selector_4DUrdr",
-        "image_mx4qLH",
         "buy_buttons_M9Mj6j",
         "video_tabs_P8chHd",
         "liquid_6dAzBW",
