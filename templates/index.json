@@ -364,7 +364,7 @@
           }
         },
         "rapi_bundles_rapi_bundle_LCUdiC": {
-          "type": "shopify://apps/rapi-bundles/blocks/rapi-bundle/99617c17-a32b-4e70-a883-7a155610d032",
+          "type": "shopify://apps/rapi/blocks/rapi-bundle/99617c17-a32b-4e70-a883-7a155610d032",
           "settings": {
             "product": "cure-ube"
           }
@@ -692,7 +692,7 @@
         "item_rERRnn": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_Jan_14_2026_05_56_17_PM.png",
+            "image": "shopify://shop_images/28621bc0-94b4-409b-ac9f-75a4e2c64446.jpg",
             "image_rotation_degrees": 0,
             "subheading": "",
             "title": "Une énergie stable retrouvée",
@@ -704,7 +704,7 @@
         "item_kPJQ6f": {
           "type": "item",
           "settings": {
-            "image": "shopify://shop_images/ChatGPT_Image_Jan_14_2026_05_46_23_PM.png",
+            "image": "shopify://shop_images/Bolmenceramique_c61d38a7-370e-4509-ba63-4052606b88d0.jpg",
             "image_rotation_degrees": 0,
             "subheading": "",
             "title": "Une meilleure digestion garantie",
@@ -723,7 +723,7 @@
       "settings": {
         "full_width": true,
         "images_layout": "stacked",
-        "collage_images_alignment": "top",
+        "collage_images_alignment": "middle",
         "background": "",
         "background_gradient": "",
         "text_color": "",
