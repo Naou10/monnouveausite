@@ -32,15 +32,15 @@
         "logo_TYhkrU": {
           "type": "logo",
           "settings": {
-            "logo": "shopify://shop_images/TATSSSSSSSS.png",
-            "logo_width": 140,
+            "logo": "shopify://shop_images/Design_sans_titre_12.png",
+            "logo_width": 160,
             "link": ""
           }
         },
         "logo_6Qwk3n": {
           "type": "logo",
           "settings": {
-            "logo": "shopify://shop_images/TOP.png",
+            "logo": "shopify://shop_images/Design_sans_titre_11.png",
             "logo_width": 140,
             "link": ""
           }
@@ -48,7 +48,7 @@
         "logo_x9n3Md": {
           "type": "logo",
           "settings": {
-            "logo": "shopify://shop_images/CAREEEEEEE.png",
+            "logo": "shopify://shop_images/AAAAA.png",
             "logo_width": 140,
             "link": ""
           }
@@ -56,7 +56,7 @@
         "logo_JhiHDJ": {
           "type": "logo",
           "settings": {
-            "logo": "shopify://shop_images/LOGO_MAGAZINE_2.png",
+            "logo": "shopify://shop_images/Design_sans_titre_14.png",
             "logo_width": 140,
             "link": ""
           }
@@ -72,7 +72,7 @@
       "settings": {
         "full_width": true,
         "stack_mobile": true,
-        "title": "Vu sur",
+        "title": "Citato da",
         "content": "",
         "text_alignment": "center",
         "items_per_row": 4,
@@ -91,7 +91,7 @@
         "heading_dAnMXm": {
           "type": "heading",
           "settings": {
-            "text": "Les 6 essentiels de la poudre violette d’UBE:",
+            "text": "Un’unica abitudine di benessere, 6 benefici per la salute:",
             "heading_tag": "h2",
             "text_color": "",
             "gradient": ""
