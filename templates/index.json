@@ -32,7 +32,7 @@
         "logo_TYhkrU": {
           "type": "logo",
           "settings": {
-            "logo": "shopify://shop_images/TOP.png",
+            "logo": "shopify://shop_images/Design_sans_titre_16.png",
             "logo_width": 160,
             "link": ""
           }
@@ -205,7 +205,7 @@
             "column_size": "3",
             "title": "Léa P.",
             "heading_tag": "h4",
-            "content": "<p>Une poudre aussi belle que bonne. J’aime ses atouts naturels et la sensation d’équilibre qu’elle apporte au quotidien. Je recommande à 100 %. </p><p>⭐⭐⭐⭐</p>",
+            "content": "<p>Une poudre aussi belle que bonne. J’aime ses atouts naturels et la sensation d’équilibre qu’elle apporte au quotidien. Je recommande à 100 %. Bien meilleur que le matcha </p><p>⭐⭐⭐⭐</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -218,7 +218,7 @@
             "column_size": "3",
             "title": "Julien R.",
             "heading_tag": "h4",
-            "content": "<p>Enfin une alternative au café qui tient ses promesses. Je me sens en forme du matin au soir, sans pic d’énergie ni crash. C’est devenu mon rituel.</p><p>⭐⭐⭐⭐⭐</p>",
+            "content": "<p>J'aime trop cette boisson, moi qui ne pouvait pas boire du matcha, j'ai trouvé cette alternative beaucoup plus douce en bouche. </p><p>⭐⭐⭐⭐⭐</p>",
             "link_url": "",
             "link_text": "",
             "link_style": "link"
@@ -273,22 +273,25 @@
         "text_color": ""
       }
     },
+    "image_with_text_overlay_7Y3ENx": {
+      "type": "image-with-text-overlay",
+      "name": "Image with text overlay",
+      "settings": {
+        "full_width": true,
+        "allow_transparent_header": false,
+        "enable_parallax": false,
+        "image_size": "auto",
+        "image": "shopify://shop_images/Copie_de_Nous_VS_eux_1.png",
+        "mobile_image": "shopify://shop_images/Copie_de_Nous_VS_eux_1.png",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "text_color": "#ffffff",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0
+      }
+    },
     "rich_text_tfzmWg": {
       "type": "rich-text",
-      "blocks": {
-        "heading_VDFxwM": {
-          "type": "heading",
-          "settings": {
-            "text": "Avant j'enchainais les cafés, et aprés j'ai découvert l'UBE",
-            "heading_tag": "h3",
-            "text_color": "#1a1a1a",
-            "gradient": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_VDFxwM"
-      ],
       "name": "Rich text",
       "settings": {
         "full_width": true,
@@ -297,33 +300,6 @@
         "background": "",
         "background_gradient": "",
         "text_color": ""
-      }
-    },
-    "before_after_image_Xpt67W": {
-      "type": "before-after-image",
-      "name": "Before/after image",
-      "settings": {
-        "full_width": true,
-        "subheading": "",
-        "title": "",
-        "content": "",
-        "before_image": "shopify://shop_images/0e65e1c3-8866-4541-98c8-3296ac4147ba.jpg",
-        "before_image_mobile": "shopify://shop_images/0e65e1c3-8866-4541-98c8-3296ac4147ba.jpg",
-        "after_image": "shopify://shop_images/28621bc0-94b4-409b-ac9f-75a4e2c64446.jpg",
-        "after_image_mobile": "shopify://shop_images/28621bc0-94b4-409b-ac9f-75a4e2c64446.jpg",
-        "expand_image": false,
-        "text_position": "start",
-        "before_after_text_position": "top",
-        "before_text": "",
-        "after_text": "",
-        "drag_initial_position": 50,
-        "background": "",
-        "background_gradient": "",
-        "text_color": "",
-        "before_text_color": "#ffffff",
-        "after_text_color": "#ffffff",
-        "drag_cursor_background": "#ffffff",
-        "drag_cursor_color": "#000000"
       }
     },
     "featured_product_UAfRCT": {
@@ -657,23 +633,6 @@
         "text_color": ""
       }
     },
-    "image_with_text_overlay_7Y3ENx": {
-      "type": "image-with-text-overlay",
-      "name": "Image with text overlay",
-      "settings": {
-        "full_width": true,
-        "allow_transparent_header": false,
-        "enable_parallax": false,
-        "image_size": "auto",
-        "image": "shopify://shop_images/Copie_de_Nous_VS_eux_1.png",
-        "mobile_image": "shopify://shop_images/Copie_de_Nous_VS_eux_1.png",
-        "mobile_text_position": "place-self-center text-center",
-        "desktop_text_position": "sm:place-self-center sm:text-center",
-        "text_color": "#ffffff",
-        "overlay_color": "#000000",
-        "overlay_opacity": 0
-      }
-    },
     "multiple_images_with_text_9tWDWk": {
       "type": "multiple-images-with-text",
       "blocks": {
@@ -928,14 +887,13 @@
     "image_with_text_overlay_tLpjCV",
     "rich_text_mXcDAg",
     "multi_column_9LJNdm",
+    "image_with_text_overlay_7Y3ENx",
     "rich_text_tfzmWg",
-    "before_after_image_Xpt67W",
     "featured_product_UAfRCT",
     "multi_column_MGqrhN",
     "accordion_content_gpELng",
     "rich_text_dTXRPL",
     "multi_column_ezz479",
-    "image_with_text_overlay_7Y3ENx",
     "multiple_images_with_text_9tWDWk",
     "featured_collection_n6GpMz",
     "faq_jHyTk9",
