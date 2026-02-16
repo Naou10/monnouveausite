@@ -17,7 +17,7 @@
         "allow_transparent_header": false,
         "enable_parallax": false,
         "image_size": "auto",
-        "image": "shopify://shop_images/Le_nouveau_matcha_violet_1.png",
+        "image": "shopify://shop_images/ChatGPT_Image_Feb_11_2026_05_06_43_PM.jpg",
         "mobile_image": "shopify://shop_images/ChatGPT_Image_Feb_11_2026_05_06_43_PM.jpg",
         "mobile_text_position": "place-self-start-center text-center",
         "desktop_text_position": "sm:place-self-start-center sm:text-center",
@@ -48,7 +48,6 @@
         "logo_x9n3Md": {
           "type": "logo",
           "settings": {
-            "logo": "shopify://shop_images/Design_sans_titre_1.png",
             "logo_width": 140,
             "link": ""
           }
@@ -120,7 +119,6 @@
         "enable_parallax": false,
         "image_size": "auto",
         "image": "shopify://shop_images/PHOTO-2026-01-21-12-55-40.jpg",
-        "mobile_image": "shopify://shop_images/bienfaits_zoom_mobile_1300x1500_2.jpg",
         "mobile_text_position": "place-self-center text-center",
         "desktop_text_position": "sm:place-self-center sm:text-center",
         "text_color": "#ffffff",
